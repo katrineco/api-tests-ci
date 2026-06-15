@@ -1,0 +1,44 @@
+name: Run Postman Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  postman-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Newman and HTML Reporter
+        run: |
+          npm install -g newman newman-reporter-htmlextra
+
+      - name: Create reports directory
+        run: mkdir -p reports
+
+      - name: Run Postman Collection
+        run: |
+          newman run tests/collection.json \
+            --env-var api_key=${{ secrets.NASA_API_KEY }} \
+            -r cli,htmlextra \
+            --reporter-htmlextra-export reports/report.html
+
+      - name: Upload HTML Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: postman-test-report
+          path: reports/report.html
