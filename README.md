@@ -6,7 +6,7 @@ Built as part of the Coursera course **Modern API Automation: From Postman to AI
 
 ## Tests
 
-- **Get Full APOD** — full request with expected status 200 and response time < 8000ms
+- **Get Full APOD** — full request with expected status 200 and response time < 20000ms
 - **Get Short APOD** — minimal GET request
 - **Get Short Data Ranged APOD** — date-range query (start_date / end_date)
 - **Get Short API Saved In Collections** — GET using a collection-variable API key
