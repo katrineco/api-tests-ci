@@ -106,8 +106,7 @@
             }
           ]
         },
-        "description": "Generated from cURL: curl 'https://api.nasa.gov/planetary/apod?api_key=NNaF3WIRhuNg2OYSpHvOQeXDgiFRc7b1nFhB9vO3' \\\n  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \\\n  -H 'accept-language: en-US,en;q=0.9' \\\n  -H 'cache-control: no-cache' \\\n  -H 'pragma: no-cache' \\\n  -H 'priority: u=0, i' \\\n  -H 'sec-ch-ua: \"Chromium\";v=\"148\", \"Google Chrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: document' \\\n  -H 'sec-fetch-mode: navigate' \\\n  -H 'sec-fetch-site: none' \\\n  -H 'sec-fetch-user: ?1' \\\n  -H 'upgrade-insecure-requests: 1' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36'"
-      },
+"description": "Generated from cURL: curl"      },
       "response": []
     },
     {
@@ -134,7 +133,8 @@
             }
           ]
         },
-        "description": "Generated from cURL: curl \"https://api.nasa.gov/planetary/apod?api_key=NNaF3WIRhuNg2OYSpHvOQeXDgiFRc7b1nFhB9vO3\""
+        "description": "Generated from cURL: curl"
+      
       },
       "response": []
     },
@@ -170,8 +170,7 @@
             }
           ]
         },
-        "description": "Generated from cURL: curl \"https://api.nasa.gov/planetary/apod?start_date=2026-06-09&end_date=2026-06-14&api_key=NNaF3WIRhuNg2OYSpHvOQeXDgiFRc7b1nFhB9vO3\""
-      },
+"description": "Generated from cURL: curl"      },
       "response": []
     },
     {
