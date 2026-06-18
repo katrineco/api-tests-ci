@@ -1,4 +1,4 @@
-name: Run Postman Tests
+name: API Test Automation CI/CD
 
 on:
   push:
@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 jobs:
-  postman-tests:
+  api-test-suite:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,7 +30,7 @@ jobs:
       - name: Create reports directory
         run: mkdir -p reports
 
-      - name: Run Postman Collection
+      - name: Execute API Test Suite
         id: newman
         continue-on-error: true
         env:
