@@ -472,7 +472,7 @@ body.theme-light code {
                 <a class="nav-link text-white" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab" aria-controls="pills-requests" aria-selected="false">Total Requests <span class="badge badge-light">4</span></a>
             </li>
             <li class="nav-item bg-danger" data-toggle="tooltip" title="Click to view the Failed Tests">
-                <a class="nav-link text-white" id="pills-failed-tab" data-toggle="pill" href="#pills-failed" role="tab" aria-controls="pills-failed" aria-selected="false">Failed Tests <span class="badge badge-light">0</span></a>
+                <a class="nav-link text-white" id="pills-failed-tab" data-toggle="pill" href="#pills-failed" role="tab" aria-controls="pills-failed" aria-selected="false">Failed Tests <span class="badge badge-light">1</span></a>
             </li>
             <li class="nav-item bg-warning" data-toggle="tooltip" title="Click to view the Skipped Tests">
                 <a class="nav-link text-white" id="pills-skipped-tab" data-toggle="pill" href="#pills-skipped" role="tab" aria-controls="pills-skipped" aria-selected="false">Skipped Tests <span class="badge badge-light">0</span></a>
@@ -483,11 +483,11 @@ body.theme-light code {
 <div class="row">
   <div class="col-md-9 col-lg-12 main">
    <h1 class="display-2 text-center">Newman Run Dashboard</h1>
-   <h5 class="text-center">Thursday, 18 June 2026 20:43:05</h5>
+   <h5 class="text-center">Thursday, 18 June 2026 20:43:12</h5>
    <div class="row">
     <div class="col-lg-3 col-md-6">
      <div class="card text-white card-success">
-      <div class="card-body bg-success">
+      <div class="card-body bg-danger">
        <div class="rotate">
         <i class="fa fa-retweet fa-5x"></i>
        </div>
@@ -509,12 +509,12 @@ body.theme-light code {
     </div>
     <div class="col-lg-3 col-md-6">
      <div class="card text-white card-info">
-      <div class="card-body bg-success">
+      <div class="card-body bg-danger">
        <div class="rotate">
         <i class="fa fa-plus-circle fa-5x"></i>
        </div>
        <h6 class="text-uppercase">Total Failed Tests</h6>
-       <h1 class="display-1">0</h1>
+       <h1 class="display-1">1</h1>
       </div>
      </div>
     </div>
@@ -550,9 +550,9 @@ body.theme-light code {
             <div class="card border-info">
                 <div class="card-body">
                 <h5 class="card-title text-uppercase text-white text-center bg-info">Timings and Data</h5>
-                <span><i class="fas fa-stopwatch"></i></span><strong> Total run duration:</strong> 52.6s<br>
-                <span><i class="fas fa-database"></i></span><strong> Total data received:</strong> 4.51KB<br>
-                <span><i class="fas fa-stopwatch"></i></span><strong> Average response time:</strong> 13.1s<br>
+                <span><i class="fas fa-stopwatch"></i></span><strong> Total run duration:</strong> 1m 0.6s<br>
+                <span><i class="fas fa-database"></i></span><strong> Total data received:</strong> 3.14KB<br>
+                <span><i class="fas fa-stopwatch"></i></span><strong> Average response time:</strong> 15.1s<br>
                 </div>
             </div>
         </div>
@@ -584,10 +584,10 @@ body.theme-light code {
                         <td class="text-center">5</td>
                         <td class="text-center">0</td>
                     </tr>
-                    <tr class="">
+                    <tr class="table-danger">
                         <td>Assertions</td>
                         <td class="text-center">2</td>
-                        <td class="text-center">0</td>
+                        <td class="text-center">1</td>
                     </tr>
                     <tr class="">
                         <td>Skipped Tests</td>
@@ -608,9 +608,36 @@ body.theme-light code {
             <div class="tab-pane fade" id="pills-failed" role="tabcard" aria-labelledby="pills-failed-tab">
                 <button id="topOfFailuresScreen" class="btn btn-outline-success btn-sm backToTop" onclick="topFunction()">Go To Top</button>
 
-                <div class="alert alert-success text-uppercase text-center">
-                     <br><br><h1 class="text-center">There are no failed tests <span><i class="far fa-thumbs-up"></i></span></h1><br><br>
-                </div>
+                    <div class="btn-group float-right" role="group" aria-label="Button Group">
+                        <button id="openAllFailed" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width: 185px;">Expand All Failed Tests</button>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div class="alert alert-danger text-uppercase text-center">
+                        <h4>Showing 1 Failure</h4>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                    <div class="card-deck">
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger">
+                                <a data-toggle="collapse" href="#" data-target="#fails-collapse-24d1a5e5-d329-4d7d-9719-30aa6ee87fd6" aria-expanded="false" aria-controls="collapse" id="fails-24d1a5e5-d329-4d7d-9719-30aa6ee87fd6" class="collapsed text-white z-block">
+                                    Iteration 1 - AssertionError - NASA Demo - Get Full APOD <i class="float-lg-right fa fa-chevron-down" style="padding-top:5px;"></i>
+                                </a>
+                            </div>
+                            <div id="fails-collapse-24d1a5e5-d329-4d7d-9719-30aa6ee87fd6" class="collapse" aria-labelledby="fails-24d1a5e5-d329-4d7d-9719-30aa6ee87fd6">
+                            <div class="card-body">
+                                <h5 ><strong>Failed Test:</strong> Status code is 200</h5>
+                            <hr>
+                            <h5 class="card-title text-uppercase text-white text-center bg-danger">Assertion Error Message</h5>
+                            <div>
+                                <pre><code >expected response to have status code 200 but got 503</code></pre>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
             </div>
 
             <div class="tab-pane fade" id="pills-skipped" role="tabcard" aria-labelledby="pills-skipped-tab">
@@ -625,6 +652,7 @@ body.theme-light code {
             <button id="topOfRequestsScreen" class="btn btn-outline-success btn-sm backToTop" onclick="topFunction()">Go To Top</button>
 
             <div class="btn-group float-right" role="group" aria-label="Button Group">
+                <button id="showOnlyFailures" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width:160px;">Show Failed Iterations</button>
                 <button id="openAll" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width: 140px;">Expand Folders</button>
                 <button id="openAllRequests" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width: 140px;">Expand Requests</button>
             </div>
@@ -639,16 +667,16 @@ body.theme-light code {
     </div>
     <h6 class="text-uppercase text-muted" id="iterationSelected" style="padding-top: 10px;"></h6>
 	<div class="tab-content" id="execution-data">
-            <div id="folder-510ca4f3-1dba-4395-95d3-9e636b4a8015" class="card-deck iteration-0">
+            <div id="folder-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
-                    <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-510ca4f3-1dba-4395-95d3-9e636b4a8015" aria-expanded="false" aria-controls="collapse" id="requests-510ca4f3-1dba-4395-95d3-9e636b4a8015" class="collapsed text-white z-block">
+                    <div class="card-header  bg-danger iteration-0">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7" aria-expanded="false" aria-controls="collapse" id="requests-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7" class="collapsed text-white z-block">
                     Iteration: 1 - Get Full APOD <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-510ca4f3-1dba-4395-95d3-9e636b4a8015" class="collapse" aria-labelledby="requests-510ca4f3-1dba-4395-95d3-9e636b4a8015">
+                    <div id="collapse-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7" class="collapse" aria-labelledby="requests-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -677,15 +705,15 @@ body.theme-light code {
                                 <div class="card border-info" style="width: 50rem;">
                                     <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
-                                    <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
-                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 618ms</span><br>
-                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 1.47KB</span><br>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 503 - Service Unavailable</span><br>
+                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 2.9s</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 91B</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
                                     <div>
                                         <div class="progress" style="height: 40px;">
-                                            <div class="progress-bar  bg-success" style="width: 100%" role="progressbar">
-                                            <h5 style="padding-top:5px;"><strong>100 %</strong></h5>
+                                            <div class="progress-bar  bg-danger" style="width: 100%" role="progressbar">
+                                            <h5 style="padding-top:5px;"><strong>50 %</strong></h5>
                                             </div>
                                         </div>
                                     </div>
@@ -762,7 +790,7 @@ body.theme-light code {
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">14d4006d-4d1f-42ce-b39c-2ad8b5ba35b2</td>
+                                                        <td class="text-wrap">1dddda8d-89cf-4e65-92b0-ed14b1edb1e6</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -796,15 +824,15 @@ body.theme-light code {
                                             <tbody>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Thu, 18 Jun 2026 20:42:13 GMT</td>
+                                                    <td class="text-wrap">Thu, 18 Jun 2026 20:42:15 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Content-Type</td>
-                                                    <td class="text-wrap">application/json</td>
+                                                    <td class="text-wrap">text/plain</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">Transfer-Encoding</td>
-                                                    <td class="text-wrap">chunked</td>
+                                                    <td class="text-nowrap">Content-Length</td>
+                                                    <td class="text-wrap">91</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Connection</td>
@@ -815,36 +843,20 @@ body.theme-light code {
                                                     <td class="text-wrap">*</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">Access-Control-Expose-Headers</td>
-                                                    <td class="text-wrap">X-RateLimit-Limit, X-RateLimit-Remaining</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">Age</td>
-                                                    <td class="text-wrap">0</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Content-Encoding</td>
-                                                    <td class="text-wrap">gzip</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Referrer-Policy</td>
-                                                    <td class="text-wrap">strict-origin-when-cross-origin</td>
+                                                    <td class="text-wrap">2</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Strict-Transport-Security</td>
                                                     <td class="text-wrap">max-age&#x3D;31536000; includeSubDomains; preload</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">Vary</td>
-                                                    <td class="text-wrap">Accept-Encoding</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">Via</td>
-                                                    <td class="text-wrap">https/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])</td>
+                                                    <td class="text-wrap">https/1.1 api-umbrella (ApacheTrafficServer [cMs f ])</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Api-Umbrella-Request-Id</td>
-                                                    <td class="text-wrap">curhs56jnpet073rpbkg</td>
+                                                    <td class="text-wrap">curhs4rsrn6v61cijek0</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Cache</td>
@@ -855,10 +867,6 @@ body.theme-light code {
                                                     <td class="text-wrap">nosniff</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">X-Powered-By</td>
-                                                    <td class="text-wrap">appdat</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">X-Ratelimit-Limit</td>
                                                     <td class="text-wrap">4000</td>
                                                 </tr>
@@ -867,20 +875,12 @@ body.theme-light code {
                                                     <td class="text-wrap">3999</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">X-Using-Nginx-Controller</td>
-                                                    <td class="text-wrap">true</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">X-Vcap-Request-Id</td>
-                                                    <td class="text-wrap">bf318023-ed8a-45b1-5e1d-601e0e604c8f</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">X-Xss-Protection</td>
-                                                    <td class="text-wrap">1; mode&#x3D;block</td>
+                                                    <td class="text-wrap">d7a20ec8-a76b-4c47-5642-22ad8b84bb20</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Frame-Options</td>
-                                                    <td class="text-wrap">SAMEORIGIN</td>
+                                                    <td class="text-wrap">DENY</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -897,11 +897,10 @@ body.theme-light code {
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-4eaf1bbf-c23e-4a60-85dd-9b8e9e0eb6db" class="prettyPrint">{&quot;copyright&quot;:&quot;X-ray: NASA/CXC/UCLA/Z. Zhu et al.; ESA/XMM-Newton; Optical: PanSTARRS; Radio: MeerKAT; Image Processing: NASA/CXC/SAO/L. Frattare and P. Edmonds\n Text: \nCecilia Chirenti \n(NASA\nGSFC, \nUMCP, \nCRESST II)&quot;,&quot;date&quot;:&quot;2026-06-18&quot;,&quot;explanation&quot;:&quot;Do you see that blue blob to the lower right of the image center?   Astronomers think that it shows where a massive star exploded as a supernova whose light reached Earth 1,700 years ago.   The image combines optical data from the PanSTARRS telescopes in Hawaii (background stars in red, green, and blue), radio from the MeerKAT telescope in South Africa (large red cloud) and X-rays from NASA&#x27;s Chandra X-ray Observatory and ESA\u2019s XMM-Newton (shown in blue).   The large cloud is a star forming region called Sagittarius C, which is approximately 50 light-years in extent and about 26,000 light-years from Earth.   It is located only about 260 light-years from the supermassive black hole in the center of the Galaxy (off to the left of the image).   If the blue blob is confirmed to be a supernova remnant, it would be one of the closest ever discovered to the Galactic Center.   In this dense region, the deaths of massive stars are connected to the birth of new stars through gas and magnetic fields in a complex way.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc_lg.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Possible Supernova Remnant in Galactic Center&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc.jpg&quot;}
-        </code></pre>
+                                                <pre><code id="copyText-969e0a17-d22f-4965-b47c-19236492ba31" class="prettyPrint">upstream connect error or disconnect/reset before headers. reset reason: connection timeout</code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-4eaf1bbf-c23e-4a60-85dd-9b8e9e0eb6db">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-969e0a17-d22f-4965-b47c-19236492ba31">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -918,8 +917,8 @@ body.theme-light code {
                                             <tbody>
                                                 <tr >
                                                     <td >Status code is 200</td>
-                                                    <td class="text-center bg-success">1</td>
                                                     <td class="text-center ">0</td>
+                                                    <td class="text-center bg-danger">1</td>
                                                     <td class="text-center ">0</td>
                                                 </tr>
                                                 <tr >
@@ -932,14 +931,14 @@ body.theme-light code {
                                             <tfoot>
                                                 <tr class="bg-light">
                                                     <td><strong>Total</strong></td>
-                                                    <td class="text-center">2</td>
-                                                    <td class="text-center">0</td>
+                                                    <td class="text-center">1</td>
+                                                    <td class="text-center">1</td>
                                                     <td class="text-center">0</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
                                     </div>
-                                    <div class="row d-none">
+                                    <div class="row ">
                                     <div class="col-sm-12 mb-3">
                                         <div class="card-deck">
                                         <div class="card border-danger" style="width: 50rem;">
@@ -949,6 +948,10 @@ body.theme-light code {
                                                     <table class="table table-hover">
                                                     <thead><tr class="text-nowrap"><th>Test Name</th><th>Assertion Error</th></tr></thead>
                                                         <tbody>
+                                                            <tr>
+                                                                <td class="w-45 text-nowrap ">Status code is 200</td>
+                                                                <td class="w-55"><pre><code >expected response to have status code 200 but got 503</code></pre></td>
+                                                            </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -966,16 +969,16 @@ body.theme-light code {
                 </div>
             </div>
             </div>
-            <div id="folder-4be78c4a-0359-4e64-a58d-a13e301296fa" class="card-deck iteration-0">
+            <div id="folder-1ade64a2-96ca-4370-ab33-74ae3d57f456" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
                     <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-4be78c4a-0359-4e64-a58d-a13e301296fa" aria-expanded="false" aria-controls="collapse" id="requests-4be78c4a-0359-4e64-a58d-a13e301296fa" class="collapsed text-white z-block">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-1ade64a2-96ca-4370-ab33-74ae3d57f456" aria-expanded="false" aria-controls="collapse" id="requests-1ade64a2-96ca-4370-ab33-74ae3d57f456" class="collapsed text-white z-block">
                     Iteration: 1 - Get Short APOD <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-4be78c4a-0359-4e64-a58d-a13e301296fa" class="collapse" aria-labelledby="requests-4be78c4a-0359-4e64-a58d-a13e301296fa">
+                    <div id="collapse-1ade64a2-96ca-4370-ab33-74ae3d57f456" class="collapse" aria-labelledby="requests-1ade64a2-96ca-4370-ab33-74ae3d57f456">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -1005,7 +1008,7 @@ body.theme-light code {
                                     <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
                                     <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
-                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 2.2s</span><br>
+                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 2.1s</span><br>
                                     <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 1.47KB</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
@@ -1045,7 +1048,7 @@ body.theme-light code {
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">b9be577a-d9b0-49a5-b404-b0742bb2e9a5</td>
+                                                        <td class="text-wrap">93fc781b-7f41-4266-9f36-ba80f69bc664</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -1079,7 +1082,7 @@ body.theme-light code {
                                             <tbody>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Thu, 18 Jun 2026 20:42:16 GMT</td>
+                                                    <td class="text-wrap">Thu, 18 Jun 2026 20:42:17 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Content-Type</td>
@@ -1127,7 +1130,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Api-Umbrella-Request-Id</td>
-                                                    <td class="text-wrap">curhs586s6udgloms6c0</td>
+                                                    <td class="text-wrap">curhs5hspmckvvp21sq0</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Cache</td>
@@ -1147,7 +1150,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Ratelimit-Remaining</td>
-                                                    <td class="text-wrap">3999</td>
+                                                    <td class="text-wrap">3998</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Using-Nginx-Controller</td>
@@ -1155,7 +1158,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Vcap-Request-Id</td>
-                                                    <td class="text-wrap">311a1c47-6393-4458-5ac2-fb24147307dd</td>
+                                                    <td class="text-wrap">773c34af-9298-41cd-75e7-7c6e2153a666</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Xss-Protection</td>
@@ -1180,11 +1183,11 @@ body.theme-light code {
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-f081eccd-7ca1-409d-9b6e-a00ac458b214" class="prettyPrint">{&quot;copyright&quot;:&quot;X-ray: NASA/CXC/UCLA/Z. Zhu et al.; ESA/XMM-Newton; Optical: PanSTARRS; Radio: MeerKAT; Image Processing: NASA/CXC/SAO/L. Frattare and P. Edmonds\n Text: \nCecilia Chirenti \n(NASA\nGSFC, \nUMCP, \nCRESST II)&quot;,&quot;date&quot;:&quot;2026-06-18&quot;,&quot;explanation&quot;:&quot;Do you see that blue blob to the lower right of the image center?   Astronomers think that it shows where a massive star exploded as a supernova whose light reached Earth 1,700 years ago.   The image combines optical data from the PanSTARRS telescopes in Hawaii (background stars in red, green, and blue), radio from the MeerKAT telescope in South Africa (large red cloud) and X-rays from NASA&#x27;s Chandra X-ray Observatory and ESA\u2019s XMM-Newton (shown in blue).   The large cloud is a star forming region called Sagittarius C, which is approximately 50 light-years in extent and about 26,000 light-years from Earth.   It is located only about 260 light-years from the supermassive black hole in the center of the Galaxy (off to the left of the image).   If the blue blob is confirmed to be a supernova remnant, it would be one of the closest ever discovered to the Galactic Center.   In this dense region, the deaths of massive stars are connected to the birth of new stars through gas and magnetic fields in a complex way.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc_lg.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Possible Supernova Remnant in Galactic Center&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc.jpg&quot;}
+                                                <pre><code id="copyText-a3cfc578-0acc-4f35-9932-d0b4a3ce4a5b" class="prettyPrint">{&quot;copyright&quot;:&quot;X-ray: NASA/CXC/UCLA/Z. Zhu et al.; ESA/XMM-Newton; Optical: PanSTARRS; Radio: MeerKAT; Image Processing: NASA/CXC/SAO/L. Frattare and P. Edmonds\n Text: \nCecilia Chirenti \n(NASA\nGSFC, \nUMCP, \nCRESST II)&quot;,&quot;date&quot;:&quot;2026-06-18&quot;,&quot;explanation&quot;:&quot;Do you see that blue blob to the lower right of the image center?   Astronomers think that it shows where a massive star exploded as a supernova whose light reached Earth 1,700 years ago.   The image combines optical data from the PanSTARRS telescopes in Hawaii (background stars in red, green, and blue), radio from the MeerKAT telescope in South Africa (large red cloud) and X-rays from NASA&#x27;s Chandra X-ray Observatory and ESA\u2019s XMM-Newton (shown in blue).   The large cloud is a star forming region called Sagittarius C, which is approximately 50 light-years in extent and about 26,000 light-years from Earth.   It is located only about 260 light-years from the supermassive black hole in the center of the Galaxy (off to the left of the image).   If the blue blob is confirmed to be a supernova remnant, it would be one of the closest ever discovered to the Galactic Center.   In this dense region, the deaths of massive stars are connected to the birth of new stars through gas and magnetic fields in a complex way.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc_lg.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Possible Supernova Remnant in Galactic Center&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc.jpg&quot;}
         </code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-f081eccd-7ca1-409d-9b6e-a00ac458b214">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-a3cfc578-0acc-4f35-9932-d0b4a3ce4a5b">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -1205,16 +1208,16 @@ body.theme-light code {
                 </div>
             </div>
             </div>
-            <div id="folder-4edbbbd9-47d4-42bf-a0f5-00b0530589c9" class="card-deck iteration-0">
+            <div id="folder-218adf48-1973-4fec-b42f-cfb559949a29" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
                     <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-4edbbbd9-47d4-42bf-a0f5-00b0530589c9" aria-expanded="false" aria-controls="collapse" id="requests-4edbbbd9-47d4-42bf-a0f5-00b0530589c9" class="collapsed text-white z-block">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-218adf48-1973-4fec-b42f-cfb559949a29" aria-expanded="false" aria-controls="collapse" id="requests-218adf48-1973-4fec-b42f-cfb559949a29" class="collapsed text-white z-block">
                     Iteration: 1 - Get Short Data Ranged APOD <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-4edbbbd9-47d4-42bf-a0f5-00b0530589c9" class="collapse" aria-labelledby="requests-4edbbbd9-47d4-42bf-a0f5-00b0530589c9">
+                    <div id="collapse-218adf48-1973-4fec-b42f-cfb559949a29" class="collapse" aria-labelledby="requests-218adf48-1973-4fec-b42f-cfb559949a29">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -1244,7 +1247,7 @@ body.theme-light code {
                                     <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
                                     <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 503 - Service Unavailable</span><br>
-                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 47.3s</span><br>
+                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 53.2s</span><br>
                                     <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 114B</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
@@ -1284,7 +1287,7 @@ body.theme-light code {
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">2299c646-0b79-431b-b000-0676ea068227</td>
+                                                        <td class="text-wrap">e06f7017-ab4f-4aa3-aaac-ead7b2ccd256</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -1318,7 +1321,7 @@ body.theme-light code {
                                             <tbody>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Thu, 18 Jun 2026 20:43:03 GMT</td>
+                                                    <td class="text-wrap">Thu, 18 Jun 2026 20:43:10 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Content-Type</td>
@@ -1338,7 +1341,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Age</td>
-                                                    <td class="text-wrap">47</td>
+                                                    <td class="text-wrap">53</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Strict-Transport-Security</td>
@@ -1350,7 +1353,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Api-Umbrella-Request-Id</td>
-                                                    <td class="text-wrap">curhs5q2kg3urabfr6hg</td>
+                                                    <td class="text-wrap">curhs632sq3l1b608qhg</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Cache</td>
@@ -1366,11 +1369,11 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Ratelimit-Remaining</td>
-                                                    <td class="text-wrap">3999</td>
+                                                    <td class="text-wrap">3998</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Vcap-Request-Id</td>
-                                                    <td class="text-wrap">2fd5f471-e38b-405c-4853-3ceceaf824d3</td>
+                                                    <td class="text-wrap">6bc6dacb-85c4-4057-7aaf-bd3e05bd7e6b</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Frame-Options</td>
@@ -1391,10 +1394,10 @@ body.theme-light code {
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-65ebfbc8-e59f-4d81-ad66-a95c7b971b5c" class="prettyPrint">upstream connect error or disconnect/reset before headers. retried and the latest reset reason: connection timeout</code></pre>
+                                                <pre><code id="copyText-9eefcbff-e979-4ce4-aec6-dfcd39be9723" class="prettyPrint">upstream connect error or disconnect/reset before headers. retried and the latest reset reason: connection timeout</code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-65ebfbc8-e59f-4d81-ad66-a95c7b971b5c">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-9eefcbff-e979-4ce4-aec6-dfcd39be9723">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -1415,16 +1418,16 @@ body.theme-light code {
                 </div>
             </div>
             </div>
-            <div id="folder-a17326be-339e-4b4a-9a41-d07345126b8f" class="card-deck iteration-0">
+            <div id="folder-15544d30-af0a-4773-9504-69962c95e805" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
                     <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-a17326be-339e-4b4a-9a41-d07345126b8f" aria-expanded="false" aria-controls="collapse" id="requests-a17326be-339e-4b4a-9a41-d07345126b8f" class="collapsed text-white z-block">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-15544d30-af0a-4773-9504-69962c95e805" aria-expanded="false" aria-controls="collapse" id="requests-15544d30-af0a-4773-9504-69962c95e805" class="collapsed text-white z-block">
                     Iteration: 1 - Get Short API Saved In Collections <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-a17326be-339e-4b4a-9a41-d07345126b8f" class="collapse" aria-labelledby="requests-a17326be-339e-4b4a-9a41-d07345126b8f">
+                    <div id="collapse-15544d30-af0a-4773-9504-69962c95e805" class="collapse" aria-labelledby="requests-15544d30-af0a-4773-9504-69962c95e805">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -1480,7 +1483,7 @@ body.theme-light code {
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">eac6edf3-e5da-496f-b515-c8833cd83885</td>
+                                                        <td class="text-wrap">f4ed35c5-ebd4-4924-949b-ffbd5dbf48c6</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -1514,7 +1517,7 @@ body.theme-light code {
                                             <tbody>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Thu, 18 Jun 2026 20:43:05 GMT</td>
+                                                    <td class="text-wrap">Thu, 18 Jun 2026 20:43:12 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Content-Type</td>
@@ -1562,7 +1565,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Api-Umbrella-Request-Id</td>
-                                                    <td class="text-wrap">curhshcf6i51rks2bb40</td>
+                                                    <td class="text-wrap">curhsj31r8as6p60sf30</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Cache</td>
@@ -1590,7 +1593,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Vcap-Request-Id</td>
-                                                    <td class="text-wrap">feb5ef25-7c7c-4881-5590-3bdb6c08eea4</td>
+                                                    <td class="text-wrap">e63b421d-c76c-4456-7cae-4ca1f373b1a3</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Xss-Protection</td>
@@ -1615,11 +1618,11 @@ body.theme-light code {
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-144be2e2-f89d-4b8f-9d5c-b4e25892dbc8" class="prettyPrint">{&quot;copyright&quot;:&quot;X-ray: NASA/CXC/UCLA/Z. Zhu et al.; ESA/XMM-Newton; Optical: PanSTARRS; Radio: MeerKAT; Image Processing: NASA/CXC/SAO/L. Frattare and P. Edmonds\n Text: \nCecilia Chirenti \n(NASA\nGSFC, \nUMCP, \nCRESST II)&quot;,&quot;date&quot;:&quot;2026-06-18&quot;,&quot;explanation&quot;:&quot;Do you see that blue blob to the lower right of the image center?   Astronomers think that it shows where a massive star exploded as a supernova whose light reached Earth 1,700 years ago.   The image combines optical data from the PanSTARRS telescopes in Hawaii (background stars in red, green, and blue), radio from the MeerKAT telescope in South Africa (large red cloud) and X-rays from NASA&#x27;s Chandra X-ray Observatory and ESA\u2019s XMM-Newton (shown in blue).   The large cloud is a star forming region called Sagittarius C, which is approximately 50 light-years in extent and about 26,000 light-years from Earth.   It is located only about 260 light-years from the supermassive black hole in the center of the Galaxy (off to the left of the image).   If the blue blob is confirmed to be a supernova remnant, it would be one of the closest ever discovered to the Galactic Center.   In this dense region, the deaths of massive stars are connected to the birth of new stars through gas and magnetic fields in a complex way.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc_lg.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Possible Supernova Remnant in Galactic Center&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc.jpg&quot;}
+                                                <pre><code id="copyText-8c80dc93-6e46-47fd-8e04-89e74c470866" class="prettyPrint">{&quot;copyright&quot;:&quot;X-ray: NASA/CXC/UCLA/Z. Zhu et al.; ESA/XMM-Newton; Optical: PanSTARRS; Radio: MeerKAT; Image Processing: NASA/CXC/SAO/L. Frattare and P. Edmonds\n Text: \nCecilia Chirenti \n(NASA\nGSFC, \nUMCP, \nCRESST II)&quot;,&quot;date&quot;:&quot;2026-06-18&quot;,&quot;explanation&quot;:&quot;Do you see that blue blob to the lower right of the image center?   Astronomers think that it shows where a massive star exploded as a supernova whose light reached Earth 1,700 years ago.   The image combines optical data from the PanSTARRS telescopes in Hawaii (background stars in red, green, and blue), radio from the MeerKAT telescope in South Africa (large red cloud) and X-rays from NASA&#x27;s Chandra X-ray Observatory and ESA\u2019s XMM-Newton (shown in blue).   The large cloud is a star forming region called Sagittarius C, which is approximately 50 light-years in extent and about 26,000 light-years from Earth.   It is located only about 260 light-years from the supermassive black hole in the center of the Galaxy (off to the left of the image).   If the blue blob is confirmed to be a supernova remnant, it would be one of the closest ever discovered to the Galactic Center.   In this dense region, the deaths of massive stars are connected to the birth of new stars through gas and magnetic fields in a complex way.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc_lg.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Possible Supernova Remnant in Galactic Center&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc.jpg&quot;}
         </code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-144be2e2-f89d-4b8f-9d5c-b4e25892dbc8">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-8c80dc93-6e46-47fd-8e04-89e74c470866">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -1728,41 +1731,41 @@ $('#openAllRequests').on('click', function(e) {
 let clickCount = $(this).data("clickCount") || 1
 switch (clickCount){
     case 1:
-            $('#requests-510ca4f3-1dba-4395-95d3-9e636b4a8015').removeClass('collapsed')
-            $('#collapse-510ca4f3-1dba-4395-95d3-9e636b4a8015').removeClass('collapsed')
-            $('#requests-510ca4f3-1dba-4395-95d3-9e636b4a8015').addClass('show')
-            $('#collapse-510ca4f3-1dba-4395-95d3-9e636b4a8015').addClass('show')
-            $('#requests-4be78c4a-0359-4e64-a58d-a13e301296fa').removeClass('collapsed')
-            $('#collapse-4be78c4a-0359-4e64-a58d-a13e301296fa').removeClass('collapsed')
-            $('#requests-4be78c4a-0359-4e64-a58d-a13e301296fa').addClass('show')
-            $('#collapse-4be78c4a-0359-4e64-a58d-a13e301296fa').addClass('show')
-            $('#requests-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').removeClass('collapsed')
-            $('#collapse-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').removeClass('collapsed')
-            $('#requests-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').addClass('show')
-            $('#collapse-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').addClass('show')
-            $('#requests-a17326be-339e-4b4a-9a41-d07345126b8f').removeClass('collapsed')
-            $('#collapse-a17326be-339e-4b4a-9a41-d07345126b8f').removeClass('collapsed')
-            $('#requests-a17326be-339e-4b4a-9a41-d07345126b8f').addClass('show')
-            $('#collapse-a17326be-339e-4b4a-9a41-d07345126b8f').addClass('show')
+            $('#requests-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').removeClass('collapsed')
+            $('#collapse-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').removeClass('collapsed')
+            $('#requests-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').addClass('show')
+            $('#collapse-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').addClass('show')
+            $('#requests-1ade64a2-96ca-4370-ab33-74ae3d57f456').removeClass('collapsed')
+            $('#collapse-1ade64a2-96ca-4370-ab33-74ae3d57f456').removeClass('collapsed')
+            $('#requests-1ade64a2-96ca-4370-ab33-74ae3d57f456').addClass('show')
+            $('#collapse-1ade64a2-96ca-4370-ab33-74ae3d57f456').addClass('show')
+            $('#requests-218adf48-1973-4fec-b42f-cfb559949a29').removeClass('collapsed')
+            $('#collapse-218adf48-1973-4fec-b42f-cfb559949a29').removeClass('collapsed')
+            $('#requests-218adf48-1973-4fec-b42f-cfb559949a29').addClass('show')
+            $('#collapse-218adf48-1973-4fec-b42f-cfb559949a29').addClass('show')
+            $('#requests-15544d30-af0a-4773-9504-69962c95e805').removeClass('collapsed')
+            $('#collapse-15544d30-af0a-4773-9504-69962c95e805').removeClass('collapsed')
+            $('#requests-15544d30-af0a-4773-9504-69962c95e805').addClass('show')
+            $('#collapse-15544d30-af0a-4773-9504-69962c95e805').addClass('show')
         $('#openAllRequests').html("Collapse Requests");
         break;
     case 2:
-            $('#requests-510ca4f3-1dba-4395-95d3-9e636b4a8015').addClass('collapsed')
-            $('#collapse-510ca4f3-1dba-4395-95d3-9e636b4a8015').addClass('collapsed')
-            $('#requests-510ca4f3-1dba-4395-95d3-9e636b4a8015').removeClass('show')
-            $('#collapse-510ca4f3-1dba-4395-95d3-9e636b4a8015').removeClass('show')
-            $('#requests-4be78c4a-0359-4e64-a58d-a13e301296fa').addClass('collapsed')
-            $('#collapse-4be78c4a-0359-4e64-a58d-a13e301296fa').addClass('collapsed')
-            $('#requests-4be78c4a-0359-4e64-a58d-a13e301296fa').removeClass('show')
-            $('#collapse-4be78c4a-0359-4e64-a58d-a13e301296fa').removeClass('show')
-            $('#requests-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').addClass('collapsed')
-            $('#collapse-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').addClass('collapsed')
-            $('#requests-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').removeClass('show')
-            $('#collapse-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').removeClass('show')
-            $('#requests-a17326be-339e-4b4a-9a41-d07345126b8f').addClass('collapsed')
-            $('#collapse-a17326be-339e-4b4a-9a41-d07345126b8f').addClass('collapsed')
-            $('#requests-a17326be-339e-4b4a-9a41-d07345126b8f').removeClass('show')
-            $('#collapse-a17326be-339e-4b4a-9a41-d07345126b8f').removeClass('show')
+            $('#requests-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').addClass('collapsed')
+            $('#collapse-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').addClass('collapsed')
+            $('#requests-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').removeClass('show')
+            $('#collapse-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').removeClass('show')
+            $('#requests-1ade64a2-96ca-4370-ab33-74ae3d57f456').addClass('collapsed')
+            $('#collapse-1ade64a2-96ca-4370-ab33-74ae3d57f456').addClass('collapsed')
+            $('#requests-1ade64a2-96ca-4370-ab33-74ae3d57f456').removeClass('show')
+            $('#collapse-1ade64a2-96ca-4370-ab33-74ae3d57f456').removeClass('show')
+            $('#requests-218adf48-1973-4fec-b42f-cfb559949a29').addClass('collapsed')
+            $('#collapse-218adf48-1973-4fec-b42f-cfb559949a29').addClass('collapsed')
+            $('#requests-218adf48-1973-4fec-b42f-cfb559949a29').removeClass('show')
+            $('#collapse-218adf48-1973-4fec-b42f-cfb559949a29').removeClass('show')
+            $('#requests-15544d30-af0a-4773-9504-69962c95e805').addClass('collapsed')
+            $('#collapse-15544d30-af0a-4773-9504-69962c95e805').addClass('collapsed')
+            $('#requests-15544d30-af0a-4773-9504-69962c95e805').removeClass('show')
+            $('#collapse-15544d30-af0a-4773-9504-69962c95e805').removeClass('show')
         $('#openAllRequests').html("Expand Requests");
         break;
 }
@@ -1778,41 +1781,41 @@ $('#openAllSkipped').on('click', function(e) {
 let clickCount = $(this).data("clickCount") || 1
 switch (clickCount){
     case 1:
-            $('#skipped-510ca4f3-1dba-4395-95d3-9e636b4a8015').removeClass('collapsed')
-            $('#skipped-collapse-510ca4f3-1dba-4395-95d3-9e636b4a8015').removeClass('collapsed')
-            $('#skipped-510ca4f3-1dba-4395-95d3-9e636b4a8015').addClass('show')
-            $('#skipped-collapse-510ca4f3-1dba-4395-95d3-9e636b4a8015').addClass('show')
-            $('#skipped-4be78c4a-0359-4e64-a58d-a13e301296fa').removeClass('collapsed')
-            $('#skipped-collapse-4be78c4a-0359-4e64-a58d-a13e301296fa').removeClass('collapsed')
-            $('#skipped-4be78c4a-0359-4e64-a58d-a13e301296fa').addClass('show')
-            $('#skipped-collapse-4be78c4a-0359-4e64-a58d-a13e301296fa').addClass('show')
-            $('#skipped-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').removeClass('collapsed')
-            $('#skipped-collapse-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').removeClass('collapsed')
-            $('#skipped-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').addClass('show')
-            $('#skipped-collapse-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').addClass('show')
-            $('#skipped-a17326be-339e-4b4a-9a41-d07345126b8f').removeClass('collapsed')
-            $('#skipped-collapse-a17326be-339e-4b4a-9a41-d07345126b8f').removeClass('collapsed')
-            $('#skipped-a17326be-339e-4b4a-9a41-d07345126b8f').addClass('show')
-            $('#skipped-collapse-a17326be-339e-4b4a-9a41-d07345126b8f').addClass('show')
+            $('#skipped-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').removeClass('collapsed')
+            $('#skipped-collapse-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').removeClass('collapsed')
+            $('#skipped-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').addClass('show')
+            $('#skipped-collapse-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').addClass('show')
+            $('#skipped-1ade64a2-96ca-4370-ab33-74ae3d57f456').removeClass('collapsed')
+            $('#skipped-collapse-1ade64a2-96ca-4370-ab33-74ae3d57f456').removeClass('collapsed')
+            $('#skipped-1ade64a2-96ca-4370-ab33-74ae3d57f456').addClass('show')
+            $('#skipped-collapse-1ade64a2-96ca-4370-ab33-74ae3d57f456').addClass('show')
+            $('#skipped-218adf48-1973-4fec-b42f-cfb559949a29').removeClass('collapsed')
+            $('#skipped-collapse-218adf48-1973-4fec-b42f-cfb559949a29').removeClass('collapsed')
+            $('#skipped-218adf48-1973-4fec-b42f-cfb559949a29').addClass('show')
+            $('#skipped-collapse-218adf48-1973-4fec-b42f-cfb559949a29').addClass('show')
+            $('#skipped-15544d30-af0a-4773-9504-69962c95e805').removeClass('collapsed')
+            $('#skipped-collapse-15544d30-af0a-4773-9504-69962c95e805').removeClass('collapsed')
+            $('#skipped-15544d30-af0a-4773-9504-69962c95e805').addClass('show')
+            $('#skipped-collapse-15544d30-af0a-4773-9504-69962c95e805').addClass('show')
         $('#openAllSkipped').html("Collapse All Skipped Tests");
         break;
     case 2:
-            $('#skipped-510ca4f3-1dba-4395-95d3-9e636b4a8015').addClass('collapsed')
-            $('#skipped-collapse-510ca4f3-1dba-4395-95d3-9e636b4a8015').addClass('collapsed')
-            $('#skipped-510ca4f3-1dba-4395-95d3-9e636b4a8015').removeClass('show')
-            $('#skipped-collapse-510ca4f3-1dba-4395-95d3-9e636b4a8015').removeClass('show')
-            $('#skipped-4be78c4a-0359-4e64-a58d-a13e301296fa').addClass('collapsed')
-            $('#skipped-collapse-4be78c4a-0359-4e64-a58d-a13e301296fa').addClass('collapsed')
-            $('#skipped-4be78c4a-0359-4e64-a58d-a13e301296fa').removeClass('show')
-            $('#skipped-collapse-4be78c4a-0359-4e64-a58d-a13e301296fa').removeClass('show')
-            $('#skipped-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').addClass('collapsed')
-            $('#skipped-collapse-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').addClass('collapsed')
-            $('#skipped-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').removeClass('show')
-            $('#skipped-collapse-4edbbbd9-47d4-42bf-a0f5-00b0530589c9').removeClass('show')
-            $('#skipped-a17326be-339e-4b4a-9a41-d07345126b8f').addClass('collapsed')
-            $('#skipped-collapse-a17326be-339e-4b4a-9a41-d07345126b8f').addClass('collapsed')
-            $('#skipped-a17326be-339e-4b4a-9a41-d07345126b8f').removeClass('show')
-            $('#skipped-collapse-a17326be-339e-4b4a-9a41-d07345126b8f').removeClass('show')
+            $('#skipped-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').addClass('collapsed')
+            $('#skipped-collapse-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').addClass('collapsed')
+            $('#skipped-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').removeClass('show')
+            $('#skipped-collapse-cacbcd1e-1509-4866-a4ac-1e0c2d6637e7').removeClass('show')
+            $('#skipped-1ade64a2-96ca-4370-ab33-74ae3d57f456').addClass('collapsed')
+            $('#skipped-collapse-1ade64a2-96ca-4370-ab33-74ae3d57f456').addClass('collapsed')
+            $('#skipped-1ade64a2-96ca-4370-ab33-74ae3d57f456').removeClass('show')
+            $('#skipped-collapse-1ade64a2-96ca-4370-ab33-74ae3d57f456').removeClass('show')
+            $('#skipped-218adf48-1973-4fec-b42f-cfb559949a29').addClass('collapsed')
+            $('#skipped-collapse-218adf48-1973-4fec-b42f-cfb559949a29').addClass('collapsed')
+            $('#skipped-218adf48-1973-4fec-b42f-cfb559949a29').removeClass('show')
+            $('#skipped-collapse-218adf48-1973-4fec-b42f-cfb559949a29').removeClass('show')
+            $('#skipped-15544d30-af0a-4773-9504-69962c95e805').addClass('collapsed')
+            $('#skipped-collapse-15544d30-af0a-4773-9504-69962c95e805').addClass('collapsed')
+            $('#skipped-15544d30-af0a-4773-9504-69962c95e805').removeClass('show')
+            $('#skipped-collapse-15544d30-af0a-4773-9504-69962c95e805').removeClass('show')
         $('#openAllSkipped').html("Expand All Skipped Tests");
         break;
 }
@@ -1830,9 +1833,21 @@ let failedItemContent
 let failedItemHeading
 switch (clickCount){
     case 1:
+            failedItemHeading = $('#fails-24d1a5e5-d329-4d7d-9719-30aa6ee87fd6');
+            failedItemContent = $("#fails-collapse-24d1a5e5-d329-4d7d-9719-30aa6ee87fd6");
+            failedItemHeading.removeClass('collapsed')
+            failedItemContent.removeClass('collapsed')
+            failedItemHeading.addClass('show')
+            failedItemContent.addClass('show')
         $('#openAllFailed').html("Collapse All Failed Tests");
         break;
     case 2:
+            failedItemHeading = $('#fails-24d1a5e5-d329-4d7d-9719-30aa6ee87fd6');
+            failedItemContent = $("#fails-collapse-24d1a5e5-d329-4d7d-9719-30aa6ee87fd6");
+            failedItemHeading.removeClass('show')
+            failedItemContent.removeClass('show')
+            failedItemHeading.addClass('collapsed')
+            failedItemContent.addClass('collapsed')
         $('#openAllFailed').html("Expand All Failed Tests");
         break;
 }
@@ -1957,6 +1972,8 @@ function scrollFunction() {
     document.getElementById("openAllRequests").style.display = "none";
 
 
+    document.getElementById("showOnlyFailures").style.display = "none";
+    document.getElementById("openAllFailed").style.display = "none";
   } else {
     document.getElementById("topOfRequestsScreen").style.display = "none";
     document.getElementById("topOfFailuresScreen").style.display = "none";
@@ -1964,6 +1981,8 @@ function scrollFunction() {
     document.getElementById("openAll").style.display = "block";
     document.getElementById("openAllRequests").style.display = "block";
 
+    document.getElementById("showOnlyFailures").style.display = "block";
+    document.getElementById("openAllFailed").style.display = "block";
   }
 }
 
@@ -2026,6 +2045,7 @@ window.onload = function () {
   document.getElementById('iteration-0').click();
   document.getElementById('iterationSelected').innerHTML = `Iteration ${document.getElementById('iteration-0').innerHTML} selected`
 
+    $("#iteration-0").removeClass('itPassed').addClass('itFailed')
 }
 </script>
 

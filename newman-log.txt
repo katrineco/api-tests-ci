@@ -3,35 +3,42 @@ newman
 NASA Demo
 
 → Get Full APOD
-  GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [200 OK, 2.31kB, 618ms]
-  ✓  Status code is 200
+  GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [503 Service Unavailable, 638B, 2.9s]
+  1. Status code is 200
   ✓  Response time is less than 20000ms
 
 → Get Short APOD
-  GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [200 OK, 2.31kB, 2.2s]
+  GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [200 OK, 2.31kB, 2.1s]
 
 → Get Short Data Ranged APOD
-  GET https://api.nasa.gov/planetary/apod?start_date=2026-06-01&end_date=2026-06-09&api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [503 Service Unavailable, 663B, 47.3s]
+  GET https://api.nasa.gov/planetary/apod?start_date=2026-06-01&end_date=2026-06-09&api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [503 Service Unavailable, 663B, 53.2s]
 
 → Get Short API Saved In Collections
   GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [200 OK, 2.31kB, 2.2s]
 
-┌─────────────────────────┬─────────────────────┬────────────────────┐
-│                         │            executed │             failed │
-├─────────────────────────┼─────────────────────┼────────────────────┤
-│              iterations │                   1 │                  0 │
-├─────────────────────────┼─────────────────────┼────────────────────┤
-│                requests │                   4 │                  0 │
-├─────────────────────────┼─────────────────────┼────────────────────┤
-│            test-scripts │                   5 │                  0 │
-├─────────────────────────┼─────────────────────┼────────────────────┤
-│      prerequest-scripts │                   4 │                  0 │
-├─────────────────────────┼─────────────────────┼────────────────────┤
-│              assertions │                   2 │                  0 │
-├─────────────────────────┴─────────────────────┴────────────────────┤
-│ total run duration: 52.6s                                          │
-├────────────────────────────────────────────────────────────────────┤
-│ total data received: 4.62kB (approx)                               │
-├────────────────────────────────────────────────────────────────────┤
-│ average response time: 13.1s [min: 618ms, max: 47.3s, s.d.: 19.7s] │
-└────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────┬────────────────────┬────────────────────┐
+│                         │           executed │             failed │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              iterations │                  1 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│                requests │                  4 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│            test-scripts │                  5 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│      prerequest-scripts │                  4 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              assertions │                  2 │                  1 │
+├─────────────────────────┴────────────────────┴────────────────────┤
+│ total run duration: 1m 0.6s                                       │
+├───────────────────────────────────────────────────────────────────┤
+│ total data received: 3.21kB (approx)                              │
+├───────────────────────────────────────────────────────────────────┤
+│ average response time: 15.1s [min: 2.1s, max: 53.2s, s.d.: 21.9s] │
+└───────────────────────────────────────────────────────────────────┘
+
+  #  failure         detail                                                
+                                                                           
+ 1.  AssertionError  Status code is 200                                    
+                     expected response to have status code 200 but got 503 
+                     at assertion:0 in test-script                         
+                     inside "Get Full APOD"                                
