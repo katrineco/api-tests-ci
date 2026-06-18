@@ -472,7 +472,7 @@ body.theme-light code {
                 <a class="nav-link text-white" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab" aria-controls="pills-requests" aria-selected="false">Total Requests <span class="badge badge-light">4</span></a>
             </li>
             <li class="nav-item bg-danger" data-toggle="tooltip" title="Click to view the Failed Tests">
-                <a class="nav-link text-white" id="pills-failed-tab" data-toggle="pill" href="#pills-failed" role="tab" aria-controls="pills-failed" aria-selected="false">Failed Tests <span class="badge badge-light">0</span></a>
+                <a class="nav-link text-white" id="pills-failed-tab" data-toggle="pill" href="#pills-failed" role="tab" aria-controls="pills-failed" aria-selected="false">Failed Tests <span class="badge badge-light">2</span></a>
             </li>
             <li class="nav-item bg-warning" data-toggle="tooltip" title="Click to view the Skipped Tests">
                 <a class="nav-link text-white" id="pills-skipped-tab" data-toggle="pill" href="#pills-skipped" role="tab" aria-controls="pills-skipped" aria-selected="false">Skipped Tests <span class="badge badge-light">0</span></a>
@@ -483,11 +483,11 @@ body.theme-light code {
 <div class="row">
   <div class="col-md-9 col-lg-12 main">
    <h1 class="display-2 text-center">Newman Run Dashboard</h1>
-   <h5 class="text-center">Thursday, 18 June 2026 18:09:31</h5>
+   <h5 class="text-center">Thursday, 18 June 2026 19:06:30</h5>
    <div class="row">
     <div class="col-lg-3 col-md-6">
      <div class="card text-white card-success">
-      <div class="card-body bg-success">
+      <div class="card-body bg-danger">
        <div class="rotate">
         <i class="fa fa-retweet fa-5x"></i>
        </div>
@@ -509,12 +509,12 @@ body.theme-light code {
     </div>
     <div class="col-lg-3 col-md-6">
      <div class="card text-white card-info">
-      <div class="card-body bg-success">
+      <div class="card-body bg-danger">
        <div class="rotate">
         <i class="fa fa-plus-circle fa-5x"></i>
        </div>
        <h6 class="text-uppercase">Total Failed Tests</h6>
-       <h1 class="display-1">0</h1>
+       <h1 class="display-1">2</h1>
       </div>
      </div>
     </div>
@@ -550,9 +550,9 @@ body.theme-light code {
             <div class="card border-info">
                 <div class="card-body">
                 <h5 class="card-title text-uppercase text-white text-center bg-info">Timings and Data</h5>
-                <span><i class="fas fa-stopwatch"></i></span><strong> Total run duration:</strong> 22.4s<br>
-                <span><i class="fas fa-database"></i></span><strong> Total data received:</strong> 14.25KB<br>
-                <span><i class="fas fa-stopwatch"></i></span><strong> Average response time:</strong> 5.5s<br>
+                <span><i class="fas fa-stopwatch"></i></span><strong> Total run duration:</strong> 45.2s<br>
+                <span><i class="fas fa-database"></i></span><strong> Total data received:</strong> 12.87KB<br>
+                <span><i class="fas fa-stopwatch"></i></span><strong> Average response time:</strong> 11.2s<br>
                 </div>
             </div>
         </div>
@@ -584,10 +584,10 @@ body.theme-light code {
                         <td class="text-center">5</td>
                         <td class="text-center">0</td>
                     </tr>
-                    <tr class="">
+                    <tr class="table-danger">
                         <td>Assertions</td>
                         <td class="text-center">2</td>
-                        <td class="text-center">0</td>
+                        <td class="text-center">2</td>
                     </tr>
                     <tr class="">
                         <td>Skipped Tests</td>
@@ -608,9 +608,57 @@ body.theme-light code {
             <div class="tab-pane fade" id="pills-failed" role="tabcard" aria-labelledby="pills-failed-tab">
                 <button id="topOfFailuresScreen" class="btn btn-outline-success btn-sm backToTop" onclick="topFunction()">Go To Top</button>
 
-                <div class="alert alert-success text-uppercase text-center">
-                     <br><br><h1 class="text-center">There are no failed tests <span><i class="far fa-thumbs-up"></i></span></h1><br><br>
-                </div>
+                    <div class="btn-group float-right" role="group" aria-label="Button Group">
+                        <button id="openAllFailed" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width: 185px;">Expand All Failed Tests</button>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div class="alert alert-danger text-uppercase text-center">
+                        <h4>Showing 2 Failures</h4>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                    <div class="card-deck">
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger">
+                                <a data-toggle="collapse" href="#" data-target="#fails-collapse-c57a7de4-887b-4647-be68-bda7104c821f" aria-expanded="false" aria-controls="collapse" id="fails-c57a7de4-887b-4647-be68-bda7104c821f" class="collapsed text-white z-block">
+                                    Iteration 1 - AssertionError - NASA Demo - Get Full APOD <i class="float-lg-right fa fa-chevron-down" style="padding-top:5px;"></i>
+                                </a>
+                            </div>
+                            <div id="fails-collapse-c57a7de4-887b-4647-be68-bda7104c821f" class="collapse" aria-labelledby="fails-c57a7de4-887b-4647-be68-bda7104c821f">
+                            <div class="card-body">
+                                <h5 ><strong>Failed Test:</strong> Status code is 200</h5>
+                            <hr>
+                            <h5 class="card-title text-uppercase text-white text-center bg-danger">Assertion Error Message</h5>
+                            <div>
+                                <pre><code >expected response to have status code 200 but got 503</code></pre>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                    <div class="card-deck">
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger">
+                                <a data-toggle="collapse" href="#" data-target="#fails-collapse-f82ad25a-22df-4085-b2e4-38054d2d53df" aria-expanded="false" aria-controls="collapse" id="fails-f82ad25a-22df-4085-b2e4-38054d2d53df" class="collapsed text-white z-block">
+                                    Iteration 1 - AssertionError - NASA Demo - Get Full APOD <i class="float-lg-right fa fa-chevron-down" style="padding-top:5px;"></i>
+                                </a>
+                            </div>
+                            <div id="fails-collapse-f82ad25a-22df-4085-b2e4-38054d2d53df" class="collapse" aria-labelledby="fails-f82ad25a-22df-4085-b2e4-38054d2d53df">
+                            <div class="card-body">
+                                <h5 ><strong>Failed Test:</strong> Response time is less than 20000ms</h5>
+                            <hr>
+                            <h5 class="card-title text-uppercase text-white text-center bg-danger">Assertion Error Message</h5>
+                            <div>
+                                <pre><code >expected 27716 to be below 20000</code></pre>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
             </div>
 
             <div class="tab-pane fade" id="pills-skipped" role="tabcard" aria-labelledby="pills-skipped-tab">
@@ -625,6 +673,7 @@ body.theme-light code {
             <button id="topOfRequestsScreen" class="btn btn-outline-success btn-sm backToTop" onclick="topFunction()">Go To Top</button>
 
             <div class="btn-group float-right" role="group" aria-label="Button Group">
+                <button id="showOnlyFailures" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width:160px;">Show Failed Iterations</button>
                 <button id="openAll" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width: 140px;">Expand Folders</button>
                 <button id="openAllRequests" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width: 140px;">Expand Requests</button>
             </div>
@@ -639,16 +688,16 @@ body.theme-light code {
     </div>
     <h6 class="text-uppercase text-muted" id="iterationSelected" style="padding-top: 10px;"></h6>
 	<div class="tab-content" id="execution-data">
-            <div id="folder-8ed4f204-3ee9-40c4-b349-4773fb54cce9" class="card-deck iteration-0">
+            <div id="folder-d40a4cae-2133-456d-9c2a-8e754ba0fb9a" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
-                    <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-8ed4f204-3ee9-40c4-b349-4773fb54cce9" aria-expanded="false" aria-controls="collapse" id="requests-8ed4f204-3ee9-40c4-b349-4773fb54cce9" class="collapsed text-white z-block">
+                    <div class="card-header  bg-danger iteration-0">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-d40a4cae-2133-456d-9c2a-8e754ba0fb9a" aria-expanded="false" aria-controls="collapse" id="requests-d40a4cae-2133-456d-9c2a-8e754ba0fb9a" class="collapsed text-white z-block">
                     Iteration: 1 - Get Full APOD <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-8ed4f204-3ee9-40c4-b349-4773fb54cce9" class="collapse" aria-labelledby="requests-8ed4f204-3ee9-40c4-b349-4773fb54cce9">
+                    <div id="collapse-d40a4cae-2133-456d-9c2a-8e754ba0fb9a" class="collapse" aria-labelledby="requests-d40a4cae-2133-456d-9c2a-8e754ba0fb9a">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -677,15 +726,15 @@ body.theme-light code {
                                 <div class="card border-info" style="width: 50rem;">
                                     <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
-                                    <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
-                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 10.6s</span><br>
-                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 1.47KB</span><br>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 503 - Service Unavailable</span><br>
+                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 27.7s</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 91B</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
                                     <div>
                                         <div class="progress" style="height: 40px;">
-                                            <div class="progress-bar  bg-success" style="width: 100%" role="progressbar">
-                                            <h5 style="padding-top:5px;"><strong>100 %</strong></h5>
+                                            <div class="progress-bar  bg-danger" style="width: 100%" role="progressbar">
+                                            <h5 style="padding-top:5px;"><strong>0 %</strong></h5>
                                             </div>
                                         </div>
                                     </div>
@@ -762,7 +811,7 @@ body.theme-light code {
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">6b44f08d-5ed3-443e-b2cf-90b39809091a</td>
+                                                        <td class="text-wrap">916de6e2-1d6a-4ef4-98ed-5cc87e6d4890</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -796,15 +845,15 @@ body.theme-light code {
                                             <tbody>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Thu, 18 Jun 2026 18:09:20 GMT</td>
+                                                    <td class="text-wrap">Thu, 18 Jun 2026 19:06:13 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Content-Type</td>
-                                                    <td class="text-wrap">application/json</td>
+                                                    <td class="text-wrap">text/plain</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">Transfer-Encoding</td>
-                                                    <td class="text-wrap">chunked</td>
+                                                    <td class="text-nowrap">Content-Length</td>
+                                                    <td class="text-wrap">91</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Connection</td>
@@ -815,28 +864,12 @@ body.theme-light code {
                                                     <td class="text-wrap">*</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">Access-Control-Expose-Headers</td>
-                                                    <td class="text-wrap">X-RateLimit-Limit, X-RateLimit-Remaining</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">Age</td>
-                                                    <td class="text-wrap">11</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Content-Encoding</td>
-                                                    <td class="text-wrap">gzip</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Referrer-Policy</td>
-                                                    <td class="text-wrap">strict-origin-when-cross-origin</td>
+                                                    <td class="text-wrap">27</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Strict-Transport-Security</td>
                                                     <td class="text-wrap">max-age&#x3D;31536000; includeSubDomains; preload</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Vary</td>
-                                                    <td class="text-wrap">Accept-Encoding</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Via</td>
@@ -844,7 +877,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Api-Umbrella-Request-Id</td>
-                                                    <td class="text-wrap">curfm2uurd9t09d10md0</td>
+                                                    <td class="text-wrap">curgg06bun59i27qt1b0</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Cache</td>
@@ -855,10 +888,6 @@ body.theme-light code {
                                                     <td class="text-wrap">nosniff</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">X-Powered-By</td>
-                                                    <td class="text-wrap">appdat</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">X-Ratelimit-Limit</td>
                                                     <td class="text-wrap">4000</td>
                                                 </tr>
@@ -867,20 +896,12 @@ body.theme-light code {
                                                     <td class="text-wrap">3999</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">X-Using-Nginx-Controller</td>
-                                                    <td class="text-wrap">true</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">X-Vcap-Request-Id</td>
-                                                    <td class="text-wrap">2f4db1b4-24d6-4b46-6c68-46b110956256</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">X-Xss-Protection</td>
-                                                    <td class="text-wrap">1; mode&#x3D;block</td>
+                                                    <td class="text-wrap">ffd336d5-0afd-4956-6318-cec5cc5088dc</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Frame-Options</td>
-                                                    <td class="text-wrap">SAMEORIGIN</td>
+                                                    <td class="text-wrap">DENY</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -897,11 +918,10 @@ body.theme-light code {
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-ba076a6e-39aa-4006-8d01-82f0f3fc3e33" class="prettyPrint">{&quot;copyright&quot;:&quot;X-ray: NASA/CXC/UCLA/Z. Zhu et al.; ESA/XMM-Newton; Optical: PanSTARRS; Radio: MeerKAT; Image Processing: NASA/CXC/SAO/L. Frattare and P. Edmonds\n Text: \nCecilia Chirenti \n(NASA\nGSFC, \nUMCP, \nCRESST II)&quot;,&quot;date&quot;:&quot;2026-06-18&quot;,&quot;explanation&quot;:&quot;Do you see that blue blob to the lower right of the image center?   Astronomers think that it shows where a massive star exploded as a supernova whose light reached Earth 1,700 years ago.   The image combines optical data from the PanSTARRS telescopes in Hawaii (background stars in red, green, and blue), radio from the MeerKAT telescope in South Africa (large red cloud) and X-rays from NASA&#x27;s Chandra X-ray Observatory and ESA\u2019s XMM-Newton (shown in blue).   The large cloud is a star forming region called Sagittarius C, which is approximately 50 light-years in extent and about 26,000 light-years from Earth.   It is located only about 260 light-years from the supermassive black hole in the center of the Galaxy (off to the left of the image).   If the blue blob is confirmed to be a supernova remnant, it would be one of the closest ever discovered to the Galactic Center.   In this dense region, the deaths of massive stars are connected to the birth of new stars through gas and magnetic fields in a complex way.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc_lg.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Possible Supernova Remnant in Galactic Center&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc.jpg&quot;}
-        </code></pre>
+                                                <pre><code id="copyText-0774f252-a258-4f64-be66-9a81b16cc4f3" class="prettyPrint">upstream connect error or disconnect/reset before headers. reset reason: connection timeout</code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-ba076a6e-39aa-4006-8d01-82f0f3fc3e33">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-0774f252-a258-4f64-be66-9a81b16cc4f3">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -918,37 +938,45 @@ body.theme-light code {
                                             <tbody>
                                                 <tr >
                                                     <td >Status code is 200</td>
-                                                    <td class="text-center bg-success">1</td>
                                                     <td class="text-center ">0</td>
+                                                    <td class="text-center bg-danger">1</td>
                                                     <td class="text-center ">0</td>
                                                 </tr>
                                                 <tr >
                                                     <td >Response time is less than 20000ms</td>
-                                                    <td class="text-center bg-success">1</td>
                                                     <td class="text-center ">0</td>
+                                                    <td class="text-center bg-danger">1</td>
                                                     <td class="text-center ">0</td>
                                                 </tr>
                                             </tbody>
                                             <tfoot>
                                                 <tr class="bg-light">
                                                     <td><strong>Total</strong></td>
-                                                    <td class="text-center">2</td>
                                                     <td class="text-center">0</td>
+                                                    <td class="text-center">2</td>
                                                     <td class="text-center">0</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
                                     </div>
-                                    <div class="row d-none">
+                                    <div class="row ">
                                     <div class="col-sm-12 mb-3">
                                         <div class="card-deck">
                                         <div class="card border-danger" style="width: 50rem;">
                                             <div class="card-body">
-                                                <h5 class="card-title text-uppercase text-white text-center bg-danger">Test Failure</h5>
+                                                <h5 class="card-title text-uppercase text-white text-center bg-danger">Test Failures</h5>
                                                 <div class="table-responsive">
                                                     <table class="table table-hover">
                                                     <thead><tr class="text-nowrap"><th>Test Name</th><th>Assertion Error</th></tr></thead>
                                                         <tbody>
+                                                            <tr>
+                                                                <td class="w-45 text-nowrap ">Status code is 200</td>
+                                                                <td class="w-55"><pre><code >expected response to have status code 200 but got 503</code></pre></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-45 text-nowrap ">Response time is less than 20000ms</td>
+                                                                <td class="w-55"><pre><code >expected 27716 to be below 20000</code></pre></td>
+                                                            </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -966,16 +994,16 @@ body.theme-light code {
                 </div>
             </div>
             </div>
-            <div id="folder-2f50e794-c17c-4ded-a986-d65ef2129cf7" class="card-deck iteration-0">
+            <div id="folder-c1d3421a-6a2c-462b-a347-010eea0e3095" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
                     <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-2f50e794-c17c-4ded-a986-d65ef2129cf7" aria-expanded="false" aria-controls="collapse" id="requests-2f50e794-c17c-4ded-a986-d65ef2129cf7" class="collapsed text-white z-block">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-c1d3421a-6a2c-462b-a347-010eea0e3095" aria-expanded="false" aria-controls="collapse" id="requests-c1d3421a-6a2c-462b-a347-010eea0e3095" class="collapsed text-white z-block">
                     Iteration: 1 - Get Short APOD <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-2f50e794-c17c-4ded-a986-d65ef2129cf7" class="collapse" aria-labelledby="requests-2f50e794-c17c-4ded-a986-d65ef2129cf7">
+                    <div id="collapse-c1d3421a-6a2c-462b-a347-010eea0e3095" class="collapse" aria-labelledby="requests-c1d3421a-6a2c-462b-a347-010eea0e3095">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -1045,7 +1073,7 @@ body.theme-light code {
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">1bd81c6c-c815-44fc-93c9-1edf9700a169</td>
+                                                        <td class="text-wrap">822a5bd5-67a1-4527-a906-bae797ef4328</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -1079,7 +1107,7 @@ body.theme-light code {
                                             <tbody>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Thu, 18 Jun 2026 18:09:22 GMT</td>
+                                                    <td class="text-wrap">Thu, 18 Jun 2026 19:06:15 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Content-Type</td>
@@ -1127,7 +1155,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Api-Umbrella-Request-Id</td>
-                                                    <td class="text-wrap">curfm5hr4dsg7tim570g</td>
+                                                    <td class="text-wrap">curgg6sarfd4sfi9ksrg</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Cache</td>
@@ -1155,7 +1183,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Vcap-Request-Id</td>
-                                                    <td class="text-wrap">8c1219cd-e53e-4062-62b2-8ab9131e0b86</td>
+                                                    <td class="text-wrap">58f6dd4c-053d-4108-5982-30c46fd0533c</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Xss-Protection</td>
@@ -1180,11 +1208,11 @@ body.theme-light code {
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-d3a94b32-5067-432a-98e8-00d77a9ca534" class="prettyPrint">{&quot;copyright&quot;:&quot;X-ray: NASA/CXC/UCLA/Z. Zhu et al.; ESA/XMM-Newton; Optical: PanSTARRS; Radio: MeerKAT; Image Processing: NASA/CXC/SAO/L. Frattare and P. Edmonds\n Text: \nCecilia Chirenti \n(NASA\nGSFC, \nUMCP, \nCRESST II)&quot;,&quot;date&quot;:&quot;2026-06-18&quot;,&quot;explanation&quot;:&quot;Do you see that blue blob to the lower right of the image center?   Astronomers think that it shows where a massive star exploded as a supernova whose light reached Earth 1,700 years ago.   The image combines optical data from the PanSTARRS telescopes in Hawaii (background stars in red, green, and blue), radio from the MeerKAT telescope in South Africa (large red cloud) and X-rays from NASA&#x27;s Chandra X-ray Observatory and ESA\u2019s XMM-Newton (shown in blue).   The large cloud is a star forming region called Sagittarius C, which is approximately 50 light-years in extent and about 26,000 light-years from Earth.   It is located only about 260 light-years from the supermassive black hole in the center of the Galaxy (off to the left of the image).   If the blue blob is confirmed to be a supernova remnant, it would be one of the closest ever discovered to the Galactic Center.   In this dense region, the deaths of massive stars are connected to the birth of new stars through gas and magnetic fields in a complex way.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc_lg.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Possible Supernova Remnant in Galactic Center&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc.jpg&quot;}
+                                                <pre><code id="copyText-143167cd-7db4-407a-bf4b-00cc7515553d" class="prettyPrint">{&quot;copyright&quot;:&quot;X-ray: NASA/CXC/UCLA/Z. Zhu et al.; ESA/XMM-Newton; Optical: PanSTARRS; Radio: MeerKAT; Image Processing: NASA/CXC/SAO/L. Frattare and P. Edmonds\n Text: \nCecilia Chirenti \n(NASA\nGSFC, \nUMCP, \nCRESST II)&quot;,&quot;date&quot;:&quot;2026-06-18&quot;,&quot;explanation&quot;:&quot;Do you see that blue blob to the lower right of the image center?   Astronomers think that it shows where a massive star exploded as a supernova whose light reached Earth 1,700 years ago.   The image combines optical data from the PanSTARRS telescopes in Hawaii (background stars in red, green, and blue), radio from the MeerKAT telescope in South Africa (large red cloud) and X-rays from NASA&#x27;s Chandra X-ray Observatory and ESA\u2019s XMM-Newton (shown in blue).   The large cloud is a star forming region called Sagittarius C, which is approximately 50 light-years in extent and about 26,000 light-years from Earth.   It is located only about 260 light-years from the supermassive black hole in the center of the Galaxy (off to the left of the image).   If the blue blob is confirmed to be a supernova remnant, it would be one of the closest ever discovered to the Galactic Center.   In this dense region, the deaths of massive stars are connected to the birth of new stars through gas and magnetic fields in a complex way.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc_lg.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Possible Supernova Remnant in Galactic Center&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/sgrc.jpg&quot;}
         </code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-d3a94b32-5067-432a-98e8-00d77a9ca534">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-143167cd-7db4-407a-bf4b-00cc7515553d">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -1205,16 +1233,16 @@ body.theme-light code {
                 </div>
             </div>
             </div>
-            <div id="folder-97160c40-f5b6-41fc-a84f-8246c31b79ec" class="card-deck iteration-0">
+            <div id="folder-af0c6546-d7e0-4946-a1a3-7ff3118be121" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
                     <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-97160c40-f5b6-41fc-a84f-8246c31b79ec" aria-expanded="false" aria-controls="collapse" id="requests-97160c40-f5b6-41fc-a84f-8246c31b79ec" class="collapsed text-white z-block">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-af0c6546-d7e0-4946-a1a3-7ff3118be121" aria-expanded="false" aria-controls="collapse" id="requests-af0c6546-d7e0-4946-a1a3-7ff3118be121" class="collapsed text-white z-block">
                     Iteration: 1 - Get Short Data Ranged APOD <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-97160c40-f5b6-41fc-a84f-8246c31b79ec" class="collapse" aria-labelledby="requests-97160c40-f5b6-41fc-a84f-8246c31b79ec">
+                    <div id="collapse-af0c6546-d7e0-4946-a1a3-7ff3118be121" class="collapse" aria-labelledby="requests-af0c6546-d7e0-4946-a1a3-7ff3118be121">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -1244,7 +1272,7 @@ body.theme-light code {
                                     <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
                                     <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
-                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 621ms</span><br>
+                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 640ms</span><br>
                                     <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 11.22KB</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
@@ -1284,7 +1312,7 @@ body.theme-light code {
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">971e981e-44dd-4f83-9e46-6828f772ea73</td>
+                                                        <td class="text-wrap">33660a87-f530-45d4-85d4-56c3a261ff94</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -1318,7 +1346,7 @@ body.theme-light code {
                                             <tbody>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Thu, 18 Jun 2026 18:09:23 GMT</td>
+                                                    <td class="text-wrap">Thu, 18 Jun 2026 19:06:16 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Content-Type</td>
@@ -1366,7 +1394,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Api-Umbrella-Request-Id</td>
-                                                    <td class="text-wrap">curfm643l7tkrhe6v240</td>
+                                                    <td class="text-wrap">curgg7f6phvnjr9pm4c0</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Cache</td>
@@ -1386,7 +1414,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Ratelimit-Remaining</td>
-                                                    <td class="text-wrap">3997</td>
+                                                    <td class="text-wrap">3998</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Using-Nginx-Controller</td>
@@ -1394,7 +1422,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Vcap-Request-Id</td>
-                                                    <td class="text-wrap">5cd810a8-6251-44a6-6d2a-73b4e50397b7</td>
+                                                    <td class="text-wrap">810aec99-4dbd-42e8-79be-8600d7e8f600</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Xss-Protection</td>
@@ -1419,11 +1447,11 @@ body.theme-light code {
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-77d82217-ffae-465a-adb9-45faec872be3" class="prettyPrint">[{&quot;date&quot;:&quot;2026-06-01&quot;,&quot;explanation&quot;:&quot;Telescopic views of Saturn and its beautiful rings often make it the star of star parties. But this stunning view of the outer gas gaint planet&#x27;s rings and night side just isn&#x27;t possible from telescopes in the vicinity of planet Earth. Peering out from the inner Solar System they can only bring Saturn&#x27;s day side into view. In fact, this image of Saturn&#x27;s slender sunlit crescent with the planet&#x27;s night shadow cast across its broad and complex ring system was captured by the robot spacecraft Cassini. After a seven year long journey from planet Earth, Cassini called Saturn orbit home for 13 years (from 2004 - 2017) before it was directed to dive into the atmosphere of the gas giant on September 15, 2017. This magnificent mosaic is composed of frames recorded by Cassini&#x27;s wide-angle camera only two days before its grand final plunge. And Saturn&#x27;s night will not be seen again until another spaceship from Earth calls.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2605/LastRingPortrait_Cassini_4472.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Saturn at Night&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2605/LastRingPortrait_Cassini_1080.jpg&quot;},{&quot;copyright&quot;:&quot;Jos\u00e9 Mtanous&quot;,&quot;date&quot;:&quot;2026-06-02&quot;,&quot;explanation&quot;:&quot;The explosion is over, but the consequences continue.  About twelve thousand years ago, a relatively normal star in the constellation Vela suddenly exploded, creating a strange point of light briefly visible to humans living near the beginning of recorded history.  The outer layers of the star crashed into the interstellar medium, driving a shock wave that is still visible today.  The featured image, taken piecemeal over 60 hours from the Khomas Region of Namibia, captures some of that filamentary and gigantic shock in visible light, with details highlighted by hydrogen (red) and oxygen (blue) emissions. As gas flies away from the detonated star, it decays and reacts with the interstellar medium, producing light in many different colors and energy bands. Remaining at the center of the Vela Supernova Remnant is a pulsar, a star as dense as nuclear matter that spins around more than ten times in a single second.   Explore the Universe: Random APOD Generator&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/Vela_Mtanous_2900.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;The Vela Supernova Remnant&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/Vela_Mtanous_960.jpg&quot;},{&quot;copyright&quot;:&quot;Nick Fritz\n\nText:\nKeighley Rockcliffe  \n(NASA\nGSFC, \nUMBC CSST, \nCRESST II)&quot;,&quot;date&quot;:&quot;2026-06-03&quot;,&quot;explanation&quot;:&quot;Over 1000 years ago, Persian astronomer Abd al-Rahman al-Sufi published humanity\u2019s oldest known record of the Andromeda Galaxy in \&quot;The Book of Fixed Stars\&quot; (Bodleian Library MS. Marsh 144 p. 167). 800 years later, Andromeda became the 31st entry in Charles Messier\u2019s \&quot;Catalogue of Nebulae and Star Clusters\&quot;. From \u201ca small cloud\u201d to \u201cnebula\u201d and now known to be our nearest major galaxy, Andromeda has remained a fundamental astronomical object. Today\u2019s image, taken over 202 hours, shows how far we have come in our ability to observe our neighbor. The diffuse red and blue clouds are mostly foreground ionized hydrogen and oxygen well within our Milky Way. Pink-red clouds of hydrogen ionized by the energetic light of young stars trace the galaxy\u2019s dusty spiral arms. M32 and M110 are satellite galaxies pictured orbiting the larger Andromeda. Despite its long history of observation through ancient unaided eyes to modern telescopes, Andromeda still holds countless secrets that astronomers will continue to search for, including how galaxies merge and evolve, as well as the nature of the dark matter that galaxies reside in.   Teachers! the NASA/IPAC Teacher Archive Research Program is officially open for applications!&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/andromeda.png&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Andromeda Through Gas and Dust&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/andromeda_1024.png&quot;},{&quot;date&quot;:&quot;2026-06-04&quot;,&quot;explanation&quot;:&quot;What is happening inside this unusual nebula?   Planetary nebula Tc 1, captured here in exquisite detail by the James Webb Space Telescope, is the celestial site where buckyballs were first identified in 2010.     Buckminsterfullerene \u2014 as buckyballs are officially called \u2014 is a molecule with 60 carbon atoms (C60) arranged in the shape of a soccer ball.   The molecule is named for architect Buckminster Fuller because of its resemblance to the geodesic dome he helped popularize.   Webb\u2019s new data reveal where the C60 molecules live in this nebula, and the geometry is striking: they populate a thin spherical shell around the central star, visible here as the bright edge of the nebula\u2019s glowing orange central region.   Look closely near the nebula\u2019s heart and a more perplexing feature emerges: a delicate structure shaped uncannily like an upside-down question mark, fitting punctuation for the many questions this nebula still poses.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/buckyballs.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;A Planetary Nebula with Cosmic Buckyballs&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/buckyballs_1024.jpg&quot;},{&quot;copyright&quot;:&quot;Rafael Sampaio&quot;,&quot;date&quot;:&quot;2026-06-05&quot;,&quot;explanation&quot;:&quot;Within our own Milky Way galaxy, two bright, spiky stars stand like sentinels in the foreground of this cosmic snapshot. Far beyond them are the galaxies of the Hydra Cluster. In fact, while the spiky foreground stars are hundreds of light-years distant, the Hydra Cluster galaxies are well over 100 million light-years away. Three large galaxies near the cluster center, two yellow ellipticals (NGC 3311, NGC 3309) and one prominent blue spiral (NGC 3312), are the dominant galaxies, each about 150,000 light-years in diameter. An intriguing overlapping galaxy pair cataloged as NGC 3314 lies above and left of NGC 3312. Also known as Abell 1060, the Hydra galaxy cluster is one of three large galaxy clusters within 200 million light-years of the Milky Way. In the nearby universe, galaxies are gravitationally bound into clusters which themselves are loosely bound into superclusters. Superclusters in turn are seen to align over even larger scales.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/HydraClusterSampaio.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;The Hydra Cluster of Galaxies&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/HydraClusterSampaio1024.jpg&quot;},{&quot;date&quot;:&quot;2026-06-06&quot;,&quot;explanation&quot;:&quot;A darkened and mysterious north polar region known to some as Mordor Macula caps this premier view of Charon, Pluto&#x27;s largest moon. The high-resolution image was captured by the interplanetary space probe New Horizons near its closest approach to distant Pluto on July 14, 2015. The combined blue, red, and infrared image data was processed to enhance colors and follow variations in Charon&#x27;s surface properties with a resolution of about 2.9 kilometers (1.8 miles). A stunning image of Charon&#x27;s Pluto-facing hemisphere, it also features a clear view of an apparently moon-girdling belt of fractures and canyons that seems to separate smooth southern plains from varied northern terrain. Charon is 1,214 kilometers (754 miles) across. That&#x27;s about 1/10th the size of planet Earth but a whopping 1/2 the diameter of Pluto itself, and makes it the largest satellite relative to its parent body in the Solar System. Still, the moon appears as a small bump at about the 1 o&#x27;clock position on Pluto&#x27;s disk in the grainy, negative, telescopic picture inset at upper left. That image was used by James Christy and Robert Harrington at the U.S. Naval Observatory in Flagstaff to discover Charon in June of 1978.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/Charon-Neutral-Bright-Release.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Charon: Moon of Pluto&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/charon_then_now_1024.jpg&quot;},{&quot;copyright&quot;:&quot;Marek Nikodem \n(PPSAE)&quot;,&quot;date&quot;:&quot;2026-06-07&quot;,&quot;explanation&quot;:&quot;It was visible around the world. The sunset conjunction of Jupiter (left) and Venus (right) in 2012 was visible almost no matter where you lived on Earth.  Anyone on our planet with a clear western horizon at sunset could see them. That year, a creative photographer traveled away from the town lights of Szubin, Poland to photograph  a near closest approach of the two planets. The bright planets were then separated by only  three degrees and his daughter struck a humorous pose. A faint red sunset still glowed in the background. Jupiter and Venus are together again this week after sunset, passing within a degree of each other about two days from today.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/JupiterPersonVenus_Nikodem_960.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Jupiter and Venus from Earth&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/JupiterPersonVenus_Nikodem_960.jpg&quot;},{&quot;copyright&quot;:&quot;Jakub Ku\u0159\u00e1k &amp; \nMartin Ma\u0161ek \n(FZU of the Czech Academy of Sciences)&quot;,&quot;date&quot;:&quot;2026-06-08&quot;,&quot;explanation&quot;:&quot;What happens to a comet as it leaves our inner Solar System?  Now, the arrival of a comet into the inner Solar System is typically heralded with great fanfare and high hopes that the comet will become bright and photogenic. But on the way out, the comet&#x27;s nucleus is less warmed by the Sun, less gas and dust are expelled, the bright coma around the nucleus shrinks and fades, and the tail length drops off. Many comets will then return to the outer Solar System and only return in hundreds or thousands of years. In contrast, some comets -- like Comet C/2025 R3 (PanSTARRS) -- receive a gravitational kick from the planets and so will never return. Pictured, Comet R3 PanSTARRs was imaged deeply many nights in early to mid-May near Cerro Paranal in Chile. Later images appear closer to the top and clearly show the shrinking ion tail.    Comet R3 Gallery: Comet R3 PanSTARRS in 2026&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/R3Tails_Kurak_1973.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Comet R3 PanSTARRS Through Time&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/R3Tails_Kurak_960.jpg&quot;},{&quot;copyright&quot;:&quot;Josep Drudis,\nChristian Sasse&quot;,&quot;date&quot;:&quot;2026-06-09&quot;,&quot;explanation&quot;:&quot;Thor not only has his own day (Thursday), but a helmet in the heavens.  Popularly called Thor&#x27;s Helmet, NGC 2359 is a hat-shaped cosmic cloud with wing-like appendages. Heroically sized even for a Norse god, Thor&#x27;s Helmet is about 30 light-years across. In fact, the cosmic head-covering is more like an interstellar bubble, blown by a fast wind from the bright, massive star near the bubble&#x27;s center. Known as a Wolf-Rayet star, the central star is an extremely hot giant thought to be in a brief, pre-supernova stage of evolution. NGC 2359 is located about 15,000 light-years away toward the constellation of the Great Overdog. This sharp image is a combination of deep images taken in light emitted by hydrogen (red) and oxygen (blue).  The star in the center of Thor&#x27;s Helmet is expected to explode in a spectacular supernova sometime within the next few thousand years.   Sky Surprise: What picture did APOD feature on your birthday? (after 1995)&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/Thor_Drudis_4389.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Thor&#x27;s Helmet&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/Thor_Drudis_960.jpg&quot;}]
+                                                <pre><code id="copyText-00aa580c-bb12-4c18-a0c0-13ac1fd8d8da" class="prettyPrint">[{&quot;date&quot;:&quot;2026-06-01&quot;,&quot;explanation&quot;:&quot;Telescopic views of Saturn and its beautiful rings often make it the star of star parties. But this stunning view of the outer gas gaint planet&#x27;s rings and night side just isn&#x27;t possible from telescopes in the vicinity of planet Earth. Peering out from the inner Solar System they can only bring Saturn&#x27;s day side into view. In fact, this image of Saturn&#x27;s slender sunlit crescent with the planet&#x27;s night shadow cast across its broad and complex ring system was captured by the robot spacecraft Cassini. After a seven year long journey from planet Earth, Cassini called Saturn orbit home for 13 years (from 2004 - 2017) before it was directed to dive into the atmosphere of the gas giant on September 15, 2017. This magnificent mosaic is composed of frames recorded by Cassini&#x27;s wide-angle camera only two days before its grand final plunge. And Saturn&#x27;s night will not be seen again until another spaceship from Earth calls.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2605/LastRingPortrait_Cassini_4472.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Saturn at Night&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2605/LastRingPortrait_Cassini_1080.jpg&quot;},{&quot;copyright&quot;:&quot;Jos\u00e9 Mtanous&quot;,&quot;date&quot;:&quot;2026-06-02&quot;,&quot;explanation&quot;:&quot;The explosion is over, but the consequences continue.  About twelve thousand years ago, a relatively normal star in the constellation Vela suddenly exploded, creating a strange point of light briefly visible to humans living near the beginning of recorded history.  The outer layers of the star crashed into the interstellar medium, driving a shock wave that is still visible today.  The featured image, taken piecemeal over 60 hours from the Khomas Region of Namibia, captures some of that filamentary and gigantic shock in visible light, with details highlighted by hydrogen (red) and oxygen (blue) emissions. As gas flies away from the detonated star, it decays and reacts with the interstellar medium, producing light in many different colors and energy bands. Remaining at the center of the Vela Supernova Remnant is a pulsar, a star as dense as nuclear matter that spins around more than ten times in a single second.   Explore the Universe: Random APOD Generator&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/Vela_Mtanous_2900.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;The Vela Supernova Remnant&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/Vela_Mtanous_960.jpg&quot;},{&quot;copyright&quot;:&quot;Nick Fritz\n\nText:\nKeighley Rockcliffe  \n(NASA\nGSFC, \nUMBC CSST, \nCRESST II)&quot;,&quot;date&quot;:&quot;2026-06-03&quot;,&quot;explanation&quot;:&quot;Over 1000 years ago, Persian astronomer Abd al-Rahman al-Sufi published humanity\u2019s oldest known record of the Andromeda Galaxy in \&quot;The Book of Fixed Stars\&quot; (Bodleian Library MS. Marsh 144 p. 167). 800 years later, Andromeda became the 31st entry in Charles Messier\u2019s \&quot;Catalogue of Nebulae and Star Clusters\&quot;. From \u201ca small cloud\u201d to \u201cnebula\u201d and now known to be our nearest major galaxy, Andromeda has remained a fundamental astronomical object. Today\u2019s image, taken over 202 hours, shows how far we have come in our ability to observe our neighbor. The diffuse red and blue clouds are mostly foreground ionized hydrogen and oxygen well within our Milky Way. Pink-red clouds of hydrogen ionized by the energetic light of young stars trace the galaxy\u2019s dusty spiral arms. M32 and M110 are satellite galaxies pictured orbiting the larger Andromeda. Despite its long history of observation through ancient unaided eyes to modern telescopes, Andromeda still holds countless secrets that astronomers will continue to search for, including how galaxies merge and evolve, as well as the nature of the dark matter that galaxies reside in.   Teachers! the NASA/IPAC Teacher Archive Research Program is officially open for applications!&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/andromeda.png&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Andromeda Through Gas and Dust&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/andromeda_1024.png&quot;},{&quot;date&quot;:&quot;2026-06-04&quot;,&quot;explanation&quot;:&quot;What is happening inside this unusual nebula?   Planetary nebula Tc 1, captured here in exquisite detail by the James Webb Space Telescope, is the celestial site where buckyballs were first identified in 2010.     Buckminsterfullerene \u2014 as buckyballs are officially called \u2014 is a molecule with 60 carbon atoms (C60) arranged in the shape of a soccer ball.   The molecule is named for architect Buckminster Fuller because of its resemblance to the geodesic dome he helped popularize.   Webb\u2019s new data reveal where the C60 molecules live in this nebula, and the geometry is striking: they populate a thin spherical shell around the central star, visible here as the bright edge of the nebula\u2019s glowing orange central region.   Look closely near the nebula\u2019s heart and a more perplexing feature emerges: a delicate structure shaped uncannily like an upside-down question mark, fitting punctuation for the many questions this nebula still poses.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/buckyballs.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;A Planetary Nebula with Cosmic Buckyballs&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/buckyballs_1024.jpg&quot;},{&quot;copyright&quot;:&quot;Rafael Sampaio&quot;,&quot;date&quot;:&quot;2026-06-05&quot;,&quot;explanation&quot;:&quot;Within our own Milky Way galaxy, two bright, spiky stars stand like sentinels in the foreground of this cosmic snapshot. Far beyond them are the galaxies of the Hydra Cluster. In fact, while the spiky foreground stars are hundreds of light-years distant, the Hydra Cluster galaxies are well over 100 million light-years away. Three large galaxies near the cluster center, two yellow ellipticals (NGC 3311, NGC 3309) and one prominent blue spiral (NGC 3312), are the dominant galaxies, each about 150,000 light-years in diameter. An intriguing overlapping galaxy pair cataloged as NGC 3314 lies above and left of NGC 3312. Also known as Abell 1060, the Hydra galaxy cluster is one of three large galaxy clusters within 200 million light-years of the Milky Way. In the nearby universe, galaxies are gravitationally bound into clusters which themselves are loosely bound into superclusters. Superclusters in turn are seen to align over even larger scales.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/HydraClusterSampaio.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;The Hydra Cluster of Galaxies&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/HydraClusterSampaio1024.jpg&quot;},{&quot;date&quot;:&quot;2026-06-06&quot;,&quot;explanation&quot;:&quot;A darkened and mysterious north polar region known to some as Mordor Macula caps this premier view of Charon, Pluto&#x27;s largest moon. The high-resolution image was captured by the interplanetary space probe New Horizons near its closest approach to distant Pluto on July 14, 2015. The combined blue, red, and infrared image data was processed to enhance colors and follow variations in Charon&#x27;s surface properties with a resolution of about 2.9 kilometers (1.8 miles). A stunning image of Charon&#x27;s Pluto-facing hemisphere, it also features a clear view of an apparently moon-girdling belt of fractures and canyons that seems to separate smooth southern plains from varied northern terrain. Charon is 1,214 kilometers (754 miles) across. That&#x27;s about 1/10th the size of planet Earth but a whopping 1/2 the diameter of Pluto itself, and makes it the largest satellite relative to its parent body in the Solar System. Still, the moon appears as a small bump at about the 1 o&#x27;clock position on Pluto&#x27;s disk in the grainy, negative, telescopic picture inset at upper left. That image was used by James Christy and Robert Harrington at the U.S. Naval Observatory in Flagstaff to discover Charon in June of 1978.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/Charon-Neutral-Bright-Release.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Charon: Moon of Pluto&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/charon_then_now_1024.jpg&quot;},{&quot;copyright&quot;:&quot;Marek Nikodem \n(PPSAE)&quot;,&quot;date&quot;:&quot;2026-06-07&quot;,&quot;explanation&quot;:&quot;It was visible around the world. The sunset conjunction of Jupiter (left) and Venus (right) in 2012 was visible almost no matter where you lived on Earth.  Anyone on our planet with a clear western horizon at sunset could see them. That year, a creative photographer traveled away from the town lights of Szubin, Poland to photograph  a near closest approach of the two planets. The bright planets were then separated by only  three degrees and his daughter struck a humorous pose. A faint red sunset still glowed in the background. Jupiter and Venus are together again this week after sunset, passing within a degree of each other about two days from today.&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/JupiterPersonVenus_Nikodem_960.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Jupiter and Venus from Earth&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/JupiterPersonVenus_Nikodem_960.jpg&quot;},{&quot;copyright&quot;:&quot;Jakub Ku\u0159\u00e1k &amp; \nMartin Ma\u0161ek \n(FZU of the Czech Academy of Sciences)&quot;,&quot;date&quot;:&quot;2026-06-08&quot;,&quot;explanation&quot;:&quot;What happens to a comet as it leaves our inner Solar System?  Now, the arrival of a comet into the inner Solar System is typically heralded with great fanfare and high hopes that the comet will become bright and photogenic. But on the way out, the comet&#x27;s nucleus is less warmed by the Sun, less gas and dust are expelled, the bright coma around the nucleus shrinks and fades, and the tail length drops off. Many comets will then return to the outer Solar System and only return in hundreds or thousands of years. In contrast, some comets -- like Comet C/2025 R3 (PanSTARRS) -- receive a gravitational kick from the planets and so will never return. Pictured, Comet R3 PanSTARRs was imaged deeply many nights in early to mid-May near Cerro Paranal in Chile. Later images appear closer to the top and clearly show the shrinking ion tail.    Comet R3 Gallery: Comet R3 PanSTARRS in 2026&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/R3Tails_Kurak_1973.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Comet R3 PanSTARRS Through Time&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/R3Tails_Kurak_960.jpg&quot;},{&quot;copyright&quot;:&quot;Josep Drudis,\nChristian Sasse&quot;,&quot;date&quot;:&quot;2026-06-09&quot;,&quot;explanation&quot;:&quot;Thor not only has his own day (Thursday), but a helmet in the heavens.  Popularly called Thor&#x27;s Helmet, NGC 2359 is a hat-shaped cosmic cloud with wing-like appendages. Heroically sized even for a Norse god, Thor&#x27;s Helmet is about 30 light-years across. In fact, the cosmic head-covering is more like an interstellar bubble, blown by a fast wind from the bright, massive star near the bubble&#x27;s center. Known as a Wolf-Rayet star, the central star is an extremely hot giant thought to be in a brief, pre-supernova stage of evolution. NGC 2359 is located about 15,000 light-years away toward the constellation of the Great Overdog. This sharp image is a combination of deep images taken in light emitted by hydrogen (red) and oxygen (blue).  The star in the center of Thor&#x27;s Helmet is expected to explode in a spectacular supernova sometime within the next few thousand years.   Sky Surprise: What picture did APOD feature on your birthday? (after 1995)&quot;,&quot;hdurl&quot;:&quot;https://apod.nasa.gov/apod/image/2606/Thor_Drudis_4389.jpg&quot;,&quot;media_type&quot;:&quot;image&quot;,&quot;service_version&quot;:&quot;v1&quot;,&quot;title&quot;:&quot;Thor&#x27;s Helmet&quot;,&quot;url&quot;:&quot;https://apod.nasa.gov/apod/image/2606/Thor_Drudis_960.jpg&quot;}]
         </code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-77d82217-ffae-465a-adb9-45faec872be3">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-00aa580c-bb12-4c18-a0c0-13ac1fd8d8da">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -1444,16 +1472,16 @@ body.theme-light code {
                 </div>
             </div>
             </div>
-            <div id="folder-140a46d4-08f3-47a4-99b9-80e832d30b68" class="card-deck iteration-0">
+            <div id="folder-2c5f894d-7f20-4d7a-91da-fcbc91a28759" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
                     <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-140a46d4-08f3-47a4-99b9-80e832d30b68" aria-expanded="false" aria-controls="collapse" id="requests-140a46d4-08f3-47a4-99b9-80e832d30b68" class="collapsed text-white z-block">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-2c5f894d-7f20-4d7a-91da-fcbc91a28759" aria-expanded="false" aria-controls="collapse" id="requests-2c5f894d-7f20-4d7a-91da-fcbc91a28759" class="collapsed text-white z-block">
                     Iteration: 1 - Get Short API Saved In Collections <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-140a46d4-08f3-47a4-99b9-80e832d30b68" class="collapse" aria-labelledby="requests-140a46d4-08f3-47a4-99b9-80e832d30b68">
+                    <div id="collapse-2c5f894d-7f20-4d7a-91da-fcbc91a28759" class="collapse" aria-labelledby="requests-2c5f894d-7f20-4d7a-91da-fcbc91a28759">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -1469,7 +1497,7 @@ body.theme-light code {
                                     <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
                                     <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 503 - Service Unavailable</span><br>
-                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 8.7s</span><br>
+                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 14.3s</span><br>
                                     <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 91B</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
@@ -1509,7 +1537,7 @@ body.theme-light code {
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">065eb895-a535-4106-b5a7-0e43650fee59</td>
+                                                        <td class="text-wrap">91074743-e87e-4d68-bdf7-c2894d54749e</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -1543,7 +1571,7 @@ body.theme-light code {
                                             <tbody>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Thu, 18 Jun 2026 18:09:31 GMT</td>
+                                                    <td class="text-wrap">Thu, 18 Jun 2026 19:06:30 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Content-Type</td>
@@ -1563,7 +1591,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Age</td>
-                                                    <td class="text-wrap">6</td>
+                                                    <td class="text-wrap">12</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Strict-Transport-Security</td>
@@ -1575,7 +1603,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Api-Umbrella-Request-Id</td>
-                                                    <td class="text-wrap">curfm692o0jrq93s98jg</td>
+                                                    <td class="text-wrap">curgg7kavj3qjlps6gdg</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Cache</td>
@@ -1595,7 +1623,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Vcap-Request-Id</td>
-                                                    <td class="text-wrap">c0981531-58bc-4d45-7b3a-409ef32d7235</td>
+                                                    <td class="text-wrap">ec056218-c7f0-42f8-5797-7fa7f2dfe3da</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">X-Frame-Options</td>
@@ -1616,10 +1644,10 @@ body.theme-light code {
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-fcb7b7c4-070b-42f1-a0da-7315395c8b86" class="prettyPrint">upstream connect error or disconnect/reset before headers. reset reason: connection timeout</code></pre>
+                                                <pre><code id="copyText-da0d185e-8b57-4c04-b945-3b63c639a96d" class="prettyPrint">upstream connect error or disconnect/reset before headers. reset reason: connection timeout</code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-fcb7b7c4-070b-42f1-a0da-7315395c8b86">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-da0d185e-8b57-4c04-b945-3b63c639a96d">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -1728,41 +1756,41 @@ $('#openAllRequests').on('click', function(e) {
 let clickCount = $(this).data("clickCount") || 1
 switch (clickCount){
     case 1:
-            $('#requests-8ed4f204-3ee9-40c4-b349-4773fb54cce9').removeClass('collapsed')
-            $('#collapse-8ed4f204-3ee9-40c4-b349-4773fb54cce9').removeClass('collapsed')
-            $('#requests-8ed4f204-3ee9-40c4-b349-4773fb54cce9').addClass('show')
-            $('#collapse-8ed4f204-3ee9-40c4-b349-4773fb54cce9').addClass('show')
-            $('#requests-2f50e794-c17c-4ded-a986-d65ef2129cf7').removeClass('collapsed')
-            $('#collapse-2f50e794-c17c-4ded-a986-d65ef2129cf7').removeClass('collapsed')
-            $('#requests-2f50e794-c17c-4ded-a986-d65ef2129cf7').addClass('show')
-            $('#collapse-2f50e794-c17c-4ded-a986-d65ef2129cf7').addClass('show')
-            $('#requests-97160c40-f5b6-41fc-a84f-8246c31b79ec').removeClass('collapsed')
-            $('#collapse-97160c40-f5b6-41fc-a84f-8246c31b79ec').removeClass('collapsed')
-            $('#requests-97160c40-f5b6-41fc-a84f-8246c31b79ec').addClass('show')
-            $('#collapse-97160c40-f5b6-41fc-a84f-8246c31b79ec').addClass('show')
-            $('#requests-140a46d4-08f3-47a4-99b9-80e832d30b68').removeClass('collapsed')
-            $('#collapse-140a46d4-08f3-47a4-99b9-80e832d30b68').removeClass('collapsed')
-            $('#requests-140a46d4-08f3-47a4-99b9-80e832d30b68').addClass('show')
-            $('#collapse-140a46d4-08f3-47a4-99b9-80e832d30b68').addClass('show')
+            $('#requests-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').removeClass('collapsed')
+            $('#collapse-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').removeClass('collapsed')
+            $('#requests-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').addClass('show')
+            $('#collapse-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').addClass('show')
+            $('#requests-c1d3421a-6a2c-462b-a347-010eea0e3095').removeClass('collapsed')
+            $('#collapse-c1d3421a-6a2c-462b-a347-010eea0e3095').removeClass('collapsed')
+            $('#requests-c1d3421a-6a2c-462b-a347-010eea0e3095').addClass('show')
+            $('#collapse-c1d3421a-6a2c-462b-a347-010eea0e3095').addClass('show')
+            $('#requests-af0c6546-d7e0-4946-a1a3-7ff3118be121').removeClass('collapsed')
+            $('#collapse-af0c6546-d7e0-4946-a1a3-7ff3118be121').removeClass('collapsed')
+            $('#requests-af0c6546-d7e0-4946-a1a3-7ff3118be121').addClass('show')
+            $('#collapse-af0c6546-d7e0-4946-a1a3-7ff3118be121').addClass('show')
+            $('#requests-2c5f894d-7f20-4d7a-91da-fcbc91a28759').removeClass('collapsed')
+            $('#collapse-2c5f894d-7f20-4d7a-91da-fcbc91a28759').removeClass('collapsed')
+            $('#requests-2c5f894d-7f20-4d7a-91da-fcbc91a28759').addClass('show')
+            $('#collapse-2c5f894d-7f20-4d7a-91da-fcbc91a28759').addClass('show')
         $('#openAllRequests').html("Collapse Requests");
         break;
     case 2:
-            $('#requests-8ed4f204-3ee9-40c4-b349-4773fb54cce9').addClass('collapsed')
-            $('#collapse-8ed4f204-3ee9-40c4-b349-4773fb54cce9').addClass('collapsed')
-            $('#requests-8ed4f204-3ee9-40c4-b349-4773fb54cce9').removeClass('show')
-            $('#collapse-8ed4f204-3ee9-40c4-b349-4773fb54cce9').removeClass('show')
-            $('#requests-2f50e794-c17c-4ded-a986-d65ef2129cf7').addClass('collapsed')
-            $('#collapse-2f50e794-c17c-4ded-a986-d65ef2129cf7').addClass('collapsed')
-            $('#requests-2f50e794-c17c-4ded-a986-d65ef2129cf7').removeClass('show')
-            $('#collapse-2f50e794-c17c-4ded-a986-d65ef2129cf7').removeClass('show')
-            $('#requests-97160c40-f5b6-41fc-a84f-8246c31b79ec').addClass('collapsed')
-            $('#collapse-97160c40-f5b6-41fc-a84f-8246c31b79ec').addClass('collapsed')
-            $('#requests-97160c40-f5b6-41fc-a84f-8246c31b79ec').removeClass('show')
-            $('#collapse-97160c40-f5b6-41fc-a84f-8246c31b79ec').removeClass('show')
-            $('#requests-140a46d4-08f3-47a4-99b9-80e832d30b68').addClass('collapsed')
-            $('#collapse-140a46d4-08f3-47a4-99b9-80e832d30b68').addClass('collapsed')
-            $('#requests-140a46d4-08f3-47a4-99b9-80e832d30b68').removeClass('show')
-            $('#collapse-140a46d4-08f3-47a4-99b9-80e832d30b68').removeClass('show')
+            $('#requests-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').addClass('collapsed')
+            $('#collapse-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').addClass('collapsed')
+            $('#requests-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').removeClass('show')
+            $('#collapse-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').removeClass('show')
+            $('#requests-c1d3421a-6a2c-462b-a347-010eea0e3095').addClass('collapsed')
+            $('#collapse-c1d3421a-6a2c-462b-a347-010eea0e3095').addClass('collapsed')
+            $('#requests-c1d3421a-6a2c-462b-a347-010eea0e3095').removeClass('show')
+            $('#collapse-c1d3421a-6a2c-462b-a347-010eea0e3095').removeClass('show')
+            $('#requests-af0c6546-d7e0-4946-a1a3-7ff3118be121').addClass('collapsed')
+            $('#collapse-af0c6546-d7e0-4946-a1a3-7ff3118be121').addClass('collapsed')
+            $('#requests-af0c6546-d7e0-4946-a1a3-7ff3118be121').removeClass('show')
+            $('#collapse-af0c6546-d7e0-4946-a1a3-7ff3118be121').removeClass('show')
+            $('#requests-2c5f894d-7f20-4d7a-91da-fcbc91a28759').addClass('collapsed')
+            $('#collapse-2c5f894d-7f20-4d7a-91da-fcbc91a28759').addClass('collapsed')
+            $('#requests-2c5f894d-7f20-4d7a-91da-fcbc91a28759').removeClass('show')
+            $('#collapse-2c5f894d-7f20-4d7a-91da-fcbc91a28759').removeClass('show')
         $('#openAllRequests').html("Expand Requests");
         break;
 }
@@ -1778,41 +1806,41 @@ $('#openAllSkipped').on('click', function(e) {
 let clickCount = $(this).data("clickCount") || 1
 switch (clickCount){
     case 1:
-            $('#skipped-8ed4f204-3ee9-40c4-b349-4773fb54cce9').removeClass('collapsed')
-            $('#skipped-collapse-8ed4f204-3ee9-40c4-b349-4773fb54cce9').removeClass('collapsed')
-            $('#skipped-8ed4f204-3ee9-40c4-b349-4773fb54cce9').addClass('show')
-            $('#skipped-collapse-8ed4f204-3ee9-40c4-b349-4773fb54cce9').addClass('show')
-            $('#skipped-2f50e794-c17c-4ded-a986-d65ef2129cf7').removeClass('collapsed')
-            $('#skipped-collapse-2f50e794-c17c-4ded-a986-d65ef2129cf7').removeClass('collapsed')
-            $('#skipped-2f50e794-c17c-4ded-a986-d65ef2129cf7').addClass('show')
-            $('#skipped-collapse-2f50e794-c17c-4ded-a986-d65ef2129cf7').addClass('show')
-            $('#skipped-97160c40-f5b6-41fc-a84f-8246c31b79ec').removeClass('collapsed')
-            $('#skipped-collapse-97160c40-f5b6-41fc-a84f-8246c31b79ec').removeClass('collapsed')
-            $('#skipped-97160c40-f5b6-41fc-a84f-8246c31b79ec').addClass('show')
-            $('#skipped-collapse-97160c40-f5b6-41fc-a84f-8246c31b79ec').addClass('show')
-            $('#skipped-140a46d4-08f3-47a4-99b9-80e832d30b68').removeClass('collapsed')
-            $('#skipped-collapse-140a46d4-08f3-47a4-99b9-80e832d30b68').removeClass('collapsed')
-            $('#skipped-140a46d4-08f3-47a4-99b9-80e832d30b68').addClass('show')
-            $('#skipped-collapse-140a46d4-08f3-47a4-99b9-80e832d30b68').addClass('show')
+            $('#skipped-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').removeClass('collapsed')
+            $('#skipped-collapse-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').removeClass('collapsed')
+            $('#skipped-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').addClass('show')
+            $('#skipped-collapse-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').addClass('show')
+            $('#skipped-c1d3421a-6a2c-462b-a347-010eea0e3095').removeClass('collapsed')
+            $('#skipped-collapse-c1d3421a-6a2c-462b-a347-010eea0e3095').removeClass('collapsed')
+            $('#skipped-c1d3421a-6a2c-462b-a347-010eea0e3095').addClass('show')
+            $('#skipped-collapse-c1d3421a-6a2c-462b-a347-010eea0e3095').addClass('show')
+            $('#skipped-af0c6546-d7e0-4946-a1a3-7ff3118be121').removeClass('collapsed')
+            $('#skipped-collapse-af0c6546-d7e0-4946-a1a3-7ff3118be121').removeClass('collapsed')
+            $('#skipped-af0c6546-d7e0-4946-a1a3-7ff3118be121').addClass('show')
+            $('#skipped-collapse-af0c6546-d7e0-4946-a1a3-7ff3118be121').addClass('show')
+            $('#skipped-2c5f894d-7f20-4d7a-91da-fcbc91a28759').removeClass('collapsed')
+            $('#skipped-collapse-2c5f894d-7f20-4d7a-91da-fcbc91a28759').removeClass('collapsed')
+            $('#skipped-2c5f894d-7f20-4d7a-91da-fcbc91a28759').addClass('show')
+            $('#skipped-collapse-2c5f894d-7f20-4d7a-91da-fcbc91a28759').addClass('show')
         $('#openAllSkipped').html("Collapse All Skipped Tests");
         break;
     case 2:
-            $('#skipped-8ed4f204-3ee9-40c4-b349-4773fb54cce9').addClass('collapsed')
-            $('#skipped-collapse-8ed4f204-3ee9-40c4-b349-4773fb54cce9').addClass('collapsed')
-            $('#skipped-8ed4f204-3ee9-40c4-b349-4773fb54cce9').removeClass('show')
-            $('#skipped-collapse-8ed4f204-3ee9-40c4-b349-4773fb54cce9').removeClass('show')
-            $('#skipped-2f50e794-c17c-4ded-a986-d65ef2129cf7').addClass('collapsed')
-            $('#skipped-collapse-2f50e794-c17c-4ded-a986-d65ef2129cf7').addClass('collapsed')
-            $('#skipped-2f50e794-c17c-4ded-a986-d65ef2129cf7').removeClass('show')
-            $('#skipped-collapse-2f50e794-c17c-4ded-a986-d65ef2129cf7').removeClass('show')
-            $('#skipped-97160c40-f5b6-41fc-a84f-8246c31b79ec').addClass('collapsed')
-            $('#skipped-collapse-97160c40-f5b6-41fc-a84f-8246c31b79ec').addClass('collapsed')
-            $('#skipped-97160c40-f5b6-41fc-a84f-8246c31b79ec').removeClass('show')
-            $('#skipped-collapse-97160c40-f5b6-41fc-a84f-8246c31b79ec').removeClass('show')
-            $('#skipped-140a46d4-08f3-47a4-99b9-80e832d30b68').addClass('collapsed')
-            $('#skipped-collapse-140a46d4-08f3-47a4-99b9-80e832d30b68').addClass('collapsed')
-            $('#skipped-140a46d4-08f3-47a4-99b9-80e832d30b68').removeClass('show')
-            $('#skipped-collapse-140a46d4-08f3-47a4-99b9-80e832d30b68').removeClass('show')
+            $('#skipped-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').addClass('collapsed')
+            $('#skipped-collapse-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').addClass('collapsed')
+            $('#skipped-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').removeClass('show')
+            $('#skipped-collapse-d40a4cae-2133-456d-9c2a-8e754ba0fb9a').removeClass('show')
+            $('#skipped-c1d3421a-6a2c-462b-a347-010eea0e3095').addClass('collapsed')
+            $('#skipped-collapse-c1d3421a-6a2c-462b-a347-010eea0e3095').addClass('collapsed')
+            $('#skipped-c1d3421a-6a2c-462b-a347-010eea0e3095').removeClass('show')
+            $('#skipped-collapse-c1d3421a-6a2c-462b-a347-010eea0e3095').removeClass('show')
+            $('#skipped-af0c6546-d7e0-4946-a1a3-7ff3118be121').addClass('collapsed')
+            $('#skipped-collapse-af0c6546-d7e0-4946-a1a3-7ff3118be121').addClass('collapsed')
+            $('#skipped-af0c6546-d7e0-4946-a1a3-7ff3118be121').removeClass('show')
+            $('#skipped-collapse-af0c6546-d7e0-4946-a1a3-7ff3118be121').removeClass('show')
+            $('#skipped-2c5f894d-7f20-4d7a-91da-fcbc91a28759').addClass('collapsed')
+            $('#skipped-collapse-2c5f894d-7f20-4d7a-91da-fcbc91a28759').addClass('collapsed')
+            $('#skipped-2c5f894d-7f20-4d7a-91da-fcbc91a28759').removeClass('show')
+            $('#skipped-collapse-2c5f894d-7f20-4d7a-91da-fcbc91a28759').removeClass('show')
         $('#openAllSkipped').html("Expand All Skipped Tests");
         break;
 }
@@ -1830,9 +1858,33 @@ let failedItemContent
 let failedItemHeading
 switch (clickCount){
     case 1:
+            failedItemHeading = $('#fails-c57a7de4-887b-4647-be68-bda7104c821f');
+            failedItemContent = $("#fails-collapse-c57a7de4-887b-4647-be68-bda7104c821f");
+            failedItemHeading.removeClass('collapsed')
+            failedItemContent.removeClass('collapsed')
+            failedItemHeading.addClass('show')
+            failedItemContent.addClass('show')
+            failedItemHeading = $('#fails-f82ad25a-22df-4085-b2e4-38054d2d53df');
+            failedItemContent = $("#fails-collapse-f82ad25a-22df-4085-b2e4-38054d2d53df");
+            failedItemHeading.removeClass('collapsed')
+            failedItemContent.removeClass('collapsed')
+            failedItemHeading.addClass('show')
+            failedItemContent.addClass('show')
         $('#openAllFailed').html("Collapse All Failed Tests");
         break;
     case 2:
+            failedItemHeading = $('#fails-c57a7de4-887b-4647-be68-bda7104c821f');
+            failedItemContent = $("#fails-collapse-c57a7de4-887b-4647-be68-bda7104c821f");
+            failedItemHeading.removeClass('show')
+            failedItemContent.removeClass('show')
+            failedItemHeading.addClass('collapsed')
+            failedItemContent.addClass('collapsed')
+            failedItemHeading = $('#fails-f82ad25a-22df-4085-b2e4-38054d2d53df');
+            failedItemContent = $("#fails-collapse-f82ad25a-22df-4085-b2e4-38054d2d53df");
+            failedItemHeading.removeClass('show')
+            failedItemContent.removeClass('show')
+            failedItemHeading.addClass('collapsed')
+            failedItemContent.addClass('collapsed')
         $('#openAllFailed').html("Expand All Failed Tests");
         break;
 }
@@ -1957,6 +2009,8 @@ function scrollFunction() {
     document.getElementById("openAllRequests").style.display = "none";
 
 
+    document.getElementById("showOnlyFailures").style.display = "none";
+    document.getElementById("openAllFailed").style.display = "none";
   } else {
     document.getElementById("topOfRequestsScreen").style.display = "none";
     document.getElementById("topOfFailuresScreen").style.display = "none";
@@ -1964,6 +2018,8 @@ function scrollFunction() {
     document.getElementById("openAll").style.display = "block";
     document.getElementById("openAllRequests").style.display = "block";
 
+    document.getElementById("showOnlyFailures").style.display = "block";
+    document.getElementById("openAllFailed").style.display = "block";
   }
 }
 
@@ -2026,6 +2082,7 @@ window.onload = function () {
   document.getElementById('iteration-0').click();
   document.getElementById('iterationSelected').innerHTML = `Iteration ${document.getElementById('iteration-0').innerHTML} selected`
 
+    $("#iteration-0").removeClass('itPassed').addClass('itFailed')
 }
 </script>
 
