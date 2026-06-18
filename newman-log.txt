@@ -3,35 +3,35 @@ newman
 NASA Demo
 
 → Get Full APOD
-  GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [200 OK, 2.31kB, 475ms]
+  GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [200 OK, 2.31kB, 251ms]
   ✓  Status code is 200
   ✓  Response time is less than 20000ms
 
 → Get Short APOD
-  GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [503 Service Unavailable, 638B, 9.8s]
+  GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [503 Service Unavailable, 639B, 15.8s]
 
 → Get Short Data Ranged APOD
-  GET https://api.nasa.gov/planetary/apod?start_date=2026-06-01&end_date=2026-06-09&api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [200 OK, 12.3kB, 660ms]
+  GET https://api.nasa.gov/planetary/apod?start_date=2026-06-01&end_date=2026-06-09&api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [503 Service Unavailable, 638B, 6.9s]
 
 → Get Short API Saved In Collections
-  GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [200 OK, 2.31kB, 3.5s]
+  GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [200 OK, 2.31kB, 2.2s]
 
-┌─────────────────────────┬───────────────────┬───────────────────┐
-│                         │          executed │            failed │
-├─────────────────────────┼───────────────────┼───────────────────┤
-│              iterations │                 1 │                 0 │
-├─────────────────────────┼───────────────────┼───────────────────┤
-│                requests │                 4 │                 0 │
-├─────────────────────────┼───────────────────┼───────────────────┤
-│            test-scripts │                 5 │                 0 │
-├─────────────────────────┼───────────────────┼───────────────────┤
-│      prerequest-scripts │                 4 │                 0 │
-├─────────────────────────┼───────────────────┼───────────────────┤
-│              assertions │                 2 │                 0 │
-├─────────────────────────┴───────────────────┴───────────────────┤
-│ total run duration: 14.6s                                       │
-├─────────────────────────────────────────────────────────────────┤
-│ total data received: 14.59kB (approx)                           │
-├─────────────────────────────────────────────────────────────────┤
-│ average response time: 3.6s [min: 475ms, max: 9.8s, s.d.: 3.7s] │
-└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────┬───────────────────┬──────────────────┐
+│                         │          executed │           failed │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              iterations │                 1 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│                requests │                 4 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│            test-scripts │                 5 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│      prerequest-scripts │                 4 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              assertions │                 2 │                0 │
+├─────────────────────────┴───────────────────┴──────────────────┤
+│ total run duration: 25.4s                                      │
+├────────────────────────────────────────────────────────────────┤
+│ total data received: 3.19kB (approx)                           │
+├────────────────────────────────────────────────────────────────┤
+│ average response time: 6.3s [min: 251ms, max: 15.8s, s.d.: 6s] │
+└────────────────────────────────────────────────────────────────┘
