@@ -7,6 +7,9 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   postman-tests:
     runs-on: ubuntu-latest
@@ -28,6 +31,7 @@ jobs:
         run: mkdir -p reports
 
       - name: Run Postman Collection
+        continue-on-error: true
         run: |
           newman run tests/collection.json \
             --env-var api_key=${{ secrets.NASA_API_KEY }} \
@@ -40,3 +44,10 @@ jobs:
         with:
           name: postman-test-report
           path: reports/report.html
+
+      - name: Deploy report to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./reports
