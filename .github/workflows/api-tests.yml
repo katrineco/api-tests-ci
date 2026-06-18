@@ -1,4 +1,4 @@
-name: Run Postman Tests
+name: API Test Automation CI/CD
 
 on:
   push:
@@ -7,8 +7,11 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  postman-tests:
+  api-test-suite:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,23 +23,56 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install Newman and HTML Reporter
+      - name: Install Newman and Reporters
         run: |
           npm install -g newman newman-reporter-htmlextra
 
       - name: Create reports directory
         run: mkdir -p reports
 
-      - name: Run Postman Collection
+      - name: Execute API Test Suite
+        id: newman
+        continue-on-error: true
+        env:
+          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
         run: |
           newman run tests/collection.json \
-            --env-var api_key=${{ secrets.NASA_API_KEY }} \
-            -r cli,htmlextra \
-            --reporter-htmlextra-export reports/report.html
+            --env-var api_key=$NASA_API_KEY \
+            -r cli,htmlextra,json \
+            --reporter-htmlextra-export reports/index.html \
+            --reporter-json-export reports/results.json \
+            2>&1 | tee reports/newman-log.txt
+
+          exit ${PIPESTATUS[0]}
 
       - name: Upload HTML Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: postman-test-report
-          path: reports/report.html
+          name: postman-html-report
+          path: reports/index.html
+
+      - name: Upload JSON Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: postman-json-report
+          path: reports/results.json
+
+      - name: Upload Newman Log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: postman-newman-log
+          path: reports/newman-log.txt
+
+      - name: Deploy Report to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./reports
+
+      - name: Fail Pipeline if Tests Failed
+        if: steps.newman.outcome == 'failure'
+        run: exit 1

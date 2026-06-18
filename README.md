@@ -1,27 +1,103 @@
-# api-tests-ci
+# API Test Automation CI/CD
 
-Postman/Newman API test suite for the [NASA APOD API](https://api.nasa.gov/planetary/apod), running on GitHub Actions CI.
+Automated API testing project built with Postman, Newman and GitHub Actions.
 
-Built as part of the Coursera course **Modern API Automation: From Postman to AI-Driven Pipelines**. Developed using VS Code with AI assistance, organized on a feature branch for clean commits.
+## Overview
 
-## Tests
+This project validates NASA's Astronomy Picture of the Day (APOD) API through automated API tests executed in a CI/CD pipeline.
 
-- **Get Full APOD** — full request with expected status 200 and response time < 20000ms
-- **Get Short APOD** — minimal GET request
-- **Get Short Data Ranged APOD** — date-range query (start_date / end_date)
-- **Get Short API Saved In Collections** — GET using a collection-variable API key
+The workflow automatically:
 
-## Run locally
+* Runs Postman collections with Newman
+* Validates API responses and status codes
+* Generates HTML and JSON test reports
+* Stores execution logs as artifacts
+* Publishes reports using GitHub Pages
+* Uses GitHub Secrets for secure API key management
 
-```bash
-npm install -g newman newman-reporter-htmlextra
+## Tech Stack
 
-newman run collection.json \
-  --env-var api_key=YOUR_NASA_API_KEY \
-  -r cli,htmlextra \
-  --reporter-htmlextra-export reports/report.html
+https://katrineco.github.io/api-tests-ci/
+
+View the latest automated test execution report published through GitHub Pages.
+
+## Tech Stack
+
+* Postman
+* Newman
+* GitHub Actions
+* GitHub Pages
+* NASA APOD API
+
+## Test Scenarios
+
+### Get Full APOD
+
+Validates:
+
+* Status code is 200
+* Response time is below the defined threshold
+
+### Get Short APOD
+
+Validates retrieval of APOD data using a simplified request.
+
+### Get Date Ranged APOD
+
+Validates retrieval of APOD entries for a specific date range.
+
+### Get APOD Using Collection Variables
+
+Validates API requests using collection variables and environment configuration.
+
+## CI/CD Pipeline
+
+The pipeline is automatically triggered on:
+
+* Push events
+* Pull Requests
+* Manual execution via GitHub Actions
+
+Pipeline stages:
+
+1. Checkout repository
+2. Setup Node.js
+3. Install Newman
+4. Execute API test suite
+5. Generate reports
+6. Upload artifacts
+7. Deploy reports to GitHub Pages
+
+## Reports
+
+Generated artifacts:
+
+* HTML Report
+* JSON Report
+* Newman Execution Log
+
+## Security
+
+The NASA API Key is stored securely using GitHub Secrets and is not exposed in source code or workflow logs.
+
+## Project Structure
+
+```text
+.github/
+└── workflows/
+    └── api-tests.yml
+
+tests/
+└── collection.json
+
+reports/
+├── index.html
+├── results.json
+└── newman-log.txt
 ```
 
-## CI
+## Author
 
-The workflow in `.github/workflows/api-tests.yml` runs on push/PR to `main`, installing Newman and executing the collection with the `NASA_API_KEY` secret from GitHub. An HTML report is uploaded as a build artifact.
+Katrine Camarini Oyakawa
+
+QA Analyst | API Testing | Test Automation | CI/CD
