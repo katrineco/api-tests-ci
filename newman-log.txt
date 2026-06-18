@@ -3,42 +3,35 @@ newman
 NASA Demo
 
 → Get Full APOD
-  GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [503 Service Unavailable, 638B, 2.9s]
-  1. Status code is 200
+  GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [200 OK, 2.31kB, 2.7s]
+  ✓  Status code is 200
   ✓  Response time is less than 20000ms
 
 → Get Short APOD
-  GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [200 OK, 2.31kB, 2.1s]
-
-→ Get Short Data Ranged APOD
-  GET https://api.nasa.gov/planetary/apod?start_date=2026-06-01&end_date=2026-06-09&api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [503 Service Unavailable, 663B, 53.2s]
-
-→ Get Short API Saved In Collections
   GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [200 OK, 2.31kB, 2.2s]
 
-┌─────────────────────────┬────────────────────┬────────────────────┐
-│                         │           executed │             failed │
-├─────────────────────────┼────────────────────┼────────────────────┤
-│              iterations │                  1 │                  0 │
-├─────────────────────────┼────────────────────┼────────────────────┤
-│                requests │                  4 │                  0 │
-├─────────────────────────┼────────────────────┼────────────────────┤
-│            test-scripts │                  5 │                  0 │
-├─────────────────────────┼────────────────────┼────────────────────┤
-│      prerequest-scripts │                  4 │                  0 │
-├─────────────────────────┼────────────────────┼────────────────────┤
-│              assertions │                  2 │                  1 │
-├─────────────────────────┴────────────────────┴────────────────────┤
-│ total run duration: 1m 0.6s                                       │
-├───────────────────────────────────────────────────────────────────┤
-│ total data received: 3.21kB (approx)                              │
-├───────────────────────────────────────────────────────────────────┤
-│ average response time: 15.1s [min: 2.1s, max: 53.2s, s.d.: 21.9s] │
-└───────────────────────────────────────────────────────────────────┘
+→ Get Short Data Ranged APOD
+  GET https://api.nasa.gov/planetary/apod?start_date=2026-06-01&end_date=2026-06-09&api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [503 Service Unavailable, 639B, 23.3s]
 
-  #  failure         detail                                                
-                                                                           
- 1.  AssertionError  Status code is 200                                    
-                     expected response to have status code 200 but got 503 
-                     at assertion:0 in test-script                         
-                     inside "Get Full APOD"                                
+→ Get Short API Saved In Collections
+  GET https://api.nasa.gov/planetary/apod?api_key=tHhXPA70v0rh6Xgb7qRiPuv5qnBcAoUoEOrSR4uf [503 Service Unavailable, 639B, 12.1s]
+
+┌─────────────────────────┬───────────────────┬──────────────────┐
+│                         │          executed │           failed │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              iterations │                 1 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│                requests │                 4 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│            test-scripts │                 5 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│      prerequest-scripts │                 4 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              assertions │                 2 │                0 │
+├─────────────────────────┴───────────────────┴──────────────────┤
+│ total run duration: 40.4s                                      │
+├────────────────────────────────────────────────────────────────┤
+│ total data received: 3.19kB (approx)                           │
+├────────────────────────────────────────────────────────────────┤
+│ average response time: 10s [min: 2.2s, max: 23.3s, s.d.: 8.5s] │
+└────────────────────────────────────────────────────────────────┘
